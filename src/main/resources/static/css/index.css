@@ -43,12 +43,12 @@ main {
     width: 100%;
     height: 100%;
 }
-.second, .third {
+.second, .third, .forth {
     display: flex;
     flex-direction: column;
     width: 1200px;
 }
-.secondfirst, .thirdfirst {
+.secondfirst, .thirdfirst, .forthfirst {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,7 +56,7 @@ main {
     padding-left: 45px;
     padding-right: 45px;
 }
-.seconda, .thirda {
+.seconda, .thirda, .fortha {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@ main {
     border: 0;
     border-radius: 12px;
 }
-.secondsecond, .thirdsecond {
+.secondsecond, .thirdsecond, .forthsecond {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -132,4 +132,23 @@ main {
 .gallerypic:hover {
     border-radius: 12px;
     transform: scale(1.05);
+}
+.tiles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 340px;
+    margin-top: 15px;
+    color: rgb(68, 68, 68);
+    border-radius: 12px;
+}
+.tile-title {
+    text-decoration: underline;
+}
+.description {
+    display: flex;
+    flex-wrap: wrap;
+    width: 280px;
 }
