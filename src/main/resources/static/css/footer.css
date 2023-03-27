@@ -82,7 +82,8 @@ img {
 @media(max-width: 767px){
     .footer-col{
         width: 50%;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
+        background-color: #6b7985;
     }
 }
 @media(max-width: 574px){
