@@ -13,4 +13,9 @@ public class LandingController {
     public String getLandingPage() {
         return "index";
     }
+
+    @GetMapping("/contact")
+    public String getContactPage() {
+        return "contact";
+    }
 }
