@@ -22,31 +22,50 @@
     <div class="contact-us">
       <div class="main-contact">
         <h2>Contact Information</h2>
+        <p class="subtitle">Please connect with us: We are expecting you.</p>
+      </div>
+      <div class="contact-pic">
+        <img class="contact-image" th:src="@{/images/contact.png}" alt="">
       </div>
     </div>
+    <br>
     <div class="contact-wrap">
-      <div class="contact-in">
-        <h1>Send a Message</h1>
-        <form>
-          <input type="text" name="name" id="name" placeholder="Full Name" class="contact-in-input">
-          <input type="email" name="email" id="email" placeholder="Email" class="contact-in-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-          <input type="text" name="subject" id="subject" placeholder="Subject" class="contact-in-input">
-          <textarea type="text" name="message" id="message" placeholder="Message" class="contact-in-textarea"></textarea>
-          <input type="submit" value="SUBMIT" class="contact-in-btn">
-        </form>
+      <form class="wrap-first">
+        <h2 class="form-title">
+          Any Queries?
+        </h2>
+        <br>
+        <label for="Full Name">Full Name</label>
+        <input class="contact-input" type="text" name="name" placeholder="Enter your name..." required>
+        <label for="Mobile Number">Mobile Number</label>
+        <input class="contact-input" type="tel" name="number" placeholder="Enter your mobile number..." required>
+        <label for="Email-address">Email-address</label>
+        <input class="contact-input" type="email" name="email" placeholder="Enter your email-address..." required>
+        <label for="Subject?">Subject?</label>
+        <input class="contact-input" type="text" name="subject" placeholder="Enter subject name..." required>
+        <label for="Description">Description</label>
+        <textarea class="contact-textarea" name="description" placeholder="Enter the description..." required></textarea>
+        <br>
+        <button type="submit" class="contact-button">Submit</button>
+      </form>
+      <div class="wrap-second">
+        <h2>Address :</h2>
+        <br>
+        <p><i class="fa-solid fa-building"></i>  Hostellers Nepal</p>
+        <p><i class="fa-solid fa-location-dot"></i>  Satdobato, Lalitpur</p>
+        <p><i class="fa-solid fa-city"></i>  Kathmandu, Nepal</p>
+        <br>
+        <a class="map" href="https://www.google.com/maps/place/Satdobato,+Lalitpur+44700/@27.6578654,85.3255994,16z/data=!4m6!3m5!1s0x39eb1763afe90a91:0x24e78f10fcea8163!8m2!3d27.6515356!4d85.327837!16s%2Fg%2F1tct73vm"><i class="fa-solid fa-map-pin"></i>  View on map</a>
+        <br>
+        <div class="wrap-second-detail">
+          <p><i class="fa-solid fa-phone"></i> Call :</p>
+          <p> 9846931874</p>
+        </div>
+        <div class="wrap-second-detail">
+          <p><i class="fa-solid fa-at"></i> Email :</p>
+          <p> karkyabhishek@gmail.com</p>
+        </div>
       </div>
-      <div class="contact-in">
-        <h2><i class="fa fa-phone"></i> Call or Email</h2>
-        <p>9846931874</p>
-        <p>karkyabhishek@gmail.com</p>
-        <h2><i class="fa fa-map-marker" ></i> Location</h2>
-        <p>Butwal, Nepal</p>
-        <h2><i class="fa-brands fa-servicestack" ></i> Our Services</h2>
-        <p>Quality Liquor</p><p>On time Delivery</p>
-      </div>
-      <div class="contact-in">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d768.7753913514742!2d85.3298036129381!3d27.706040740499002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a74aa1f23%3A0x74ebef82ad0e5c15!2sSoftwarica%20College!5e0!3m2!1sen!2snp!4v1675420937298!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
-    </div>
     </div>
   </main>
   <footer th:replace="~{/fragments/footer.html}"></footer>
