@@ -6,6 +6,10 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+h2{
+    font-family: "Roboto Thin";
+    opacity: 0.8;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -33,6 +37,7 @@ main {
     background-color: rgb(245, 245, 245);
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+    text-align: center;
 }
 .firstright {
     display: flex;
