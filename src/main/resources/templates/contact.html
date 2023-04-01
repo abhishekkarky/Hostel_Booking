@@ -31,22 +31,36 @@
     <br>
     <div class="contact-wrap">
       <form class="wrap-first">
+        <br>
         <h2 class="form-title">
           Any Queries?
         </h2>
         <br>
-        <label for="Full Name">Full Name</label>
-        <input class="contact-input" type="text" name="name" placeholder="Enter your name..." required>
-        <label for="Mobile Number">Mobile Number</label>
-        <input class="contact-input" type="tel" name="number" placeholder="Enter your mobile number..." required>
-        <label for="Email-address">Email-address</label>
-        <input class="contact-input" type="email" name="email" placeholder="Enter your email-address..." required>
-        <label for="Subject?">Subject?</label>
-        <input class="contact-input" type="text" name="subject" placeholder="Enter subject name..." required>
-        <label for="Description">Description</label>
-        <textarea class="contact-textarea" name="description" placeholder="Enter the description..." required></textarea>
-        <br>
-        <button type="submit" class="contact-button">Submit</button>
+        <div class="for-fields">
+          <div class="input-fields">
+            <i class="fa-solid fa-user"></i>
+            <input class="input" type="text" id="name" name="name" placeholder="Full Name..." required>
+          </div>
+          <div class="input-fields">
+            <i class="fa-solid fa-at"></i>
+            <input class="input" type="email" id="email" name="email" placeholder="Email-address..." required>
+          </div>
+          <div class="input-fields">
+            <i class="fa-solid fa-mobile"></i>
+            <input class="input" type="tel" id="number" name="number" placeholder="Mobile Number..." required>
+          </div>
+          <div class="input-fields">
+            <i class="fa-solid fa-location-dot"></i>
+            <input class="input" type="text" id="address" name="address" placeholder="Address..." required>
+          </div>
+          <div class="input-fields">
+            <i class="fa-solid fa-text"></i>
+            <input class="input" type="text" id="subject" name="subject" placeholder="Subject..." required>
+          </div>
+          <textarea class="contact-textarea" type="text" id="description" name="description" placeholder="Description..." required></textarea>
+          <br>
+          <button class="contact-button" id="button" type="submit">Submit</button>
+        </div>
       </form>
       <div class="wrap-second">
         <h2>Address :</h2>
