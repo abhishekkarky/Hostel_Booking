@@ -15,6 +15,22 @@ public class RoomController {
         return "single-seater";
     }
 
+    @GetMapping("/double-seater")
+    public String getDoubleSeater() {
+        return "double-seater";
+    }
+
+    @GetMapping("/triple-seater")
+    public String getTripleSeater() {
+        return "triple-seater";
+    }
+
+    @GetMapping("/four-seater")
+    public String getFourSeater() {
+        return "four-seater";
+    }
+
+
     @GetMapping("/description")
         public String getRoomDescription() {
         return "room-description";
