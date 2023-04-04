@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Booking</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/services.css}">
+    <link rel="stylesheet" th:href="@{/css/preloader.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/javascript/preloader.js}" defer></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header th:replace="~{/fragments/header.html}"></header>
+    <main class="contact-main-wrap">
+        <div class="contact-us">
+            <div class="main-contact">
+                <h2>Our Services</h2>
+                <p class="subtitle">Our main priority is to satisfy to our customers</p>
+            </div>
+            <div class="contact-pic">
+                <img class="contact-image" th:src="@{/images/ser.svg}" alt="">
+            </div>
+        </div>
+        <br>
+        <div class="contact-wrap">
+            <div class="service-wrap">
+                <br>
+                <div class="service-wrap-image">
+                    <img class="booking-image" th:src="@{/images/hostelservice.png}" alt="">
+                </div>
+                <h2>
+                    Hostel Booking
+                </h2>
+                <br>
+                <div class="HostelDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reiciendis corporis illo perspiciatis placeat tenetur recusandae dicta iusto asperiores delectus! Architecto assumenda modi maiores esse. Omnis modi consequatur similique! Placeat!
+                </div>
+                <br>
+                <div>
+                    <button class="contact-button" id="button" type="submit">more..</button>
+                </div>
+            </div>
+            <div class="service-wrap">
+                <br>
+                <div class="service-wrap-image">
+                    <img class="booking-image" th:src="@{/images/Groceryservice.png}" alt="">
+                </div>
+                <h2>
+                    Grocery
+                </h2>
+                <br>
+                <div class="HostelDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reiciendis corporis illo perspiciatis placeat tenetur recusandae dicta iusto asperiores delectus! Architecto assumenda modi maiores esse. Omnis modi consequatur similique! Placeat!
+                </div>
+                <br>
+                <div>
+                    <button class="contact-button" id="button" type="submit">more..</button>
+                </div>
+            </div>
+            <div class="service-wrap">
+                <br>
+                <div class="service-wrap-image">
+                    <img class="booking-image" th:src="@{/images/happy_customer.svg}" alt="">
+                </div>
+                <h2>
+                    Happy Customers
+                </h2>
+                <br>
+                <div class="HostelDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab reiciendis corporis illo perspiciatis placeat tenetur recusandae dicta iusto asperiores delectus! Architecto assumenda modi maiores esse. Omnis modi consequatur similique! Placeat!
+                </div>
+                <br>
+                <div>
+                    <button class="contact-button" id="button" type="submit">more..</button>
+                </div>
+            </div>
+        </div>
+        <br>
+    </main>
+    <footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>

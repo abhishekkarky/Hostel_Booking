@@ -24,5 +24,10 @@ public class LandingController {
         return "blogs";
     }
 
+    @GetMapping("/services")
+    public String getServices() {
+        return "services";
+    }
+
 
 }

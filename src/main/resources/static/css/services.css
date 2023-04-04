@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+.contact-main-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+.contact-us{
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    align-items: center;
+    min-height: 1px;
+    width: 100%;
+    height: 30vh;
+    background-color: #f5f6f7;
+}
+.contact-image {
+    width: 100%;
+    height: 100%;
+}
+.contact-pic {
+    height: 28vh;
+    width: 350px;
+}
+.booking-image{
+    height: 100%;
+    width: 100%;
+}
+
+.HostelDescription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.service-wrap-image {
+    height: 26vh;
+    width: 100%;
+}
+.main-contact{
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    color: #6b7985;
+    justify-content: flex-start;
+    align-items: center;
+}
+.subtitle {
+    font-size: 17px;
+}
+.main-contact h2{
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+}
+.contact-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    padding-top: 20px;
+
+}
+.form-title {
+    padding-left: 35px;
+    margin-top: 10px;
+}
+
+.service-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.for-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.input-fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 45px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1.5px solid #c7c9cb;
+    border-radius: 5px;
+}
+.fa-solid {
+    padding-left: 5px;
+    color: #6b7985;
+}
+.input {
+    height: 100%;
+    width: 380px;
+    font-size: 13px;
+    border-radius: 6px;
+    font-size: 15px;
+    padding-left: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    color: #6b7985;
+}
+.contact-textarea {
+    width: 400px;
+    height: 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 1.5px solid #c7c9cb;
+    border-radius: 5px;
+    color: #6b7985;
+    font-size: 15px;
+}
+.contact-button {
+    width: 380px;
+    height: 35px;
+    background-color: #6b7985;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.contact-button:hover {
+    background-color: #505a63;
+    font-size: 18px;
+}
+
+.fa-map-pin {
+    color: red;
+}
+.map {
+    color: red;
+}
+.wrap-second-detail {
+    display: flex;
+}
+
