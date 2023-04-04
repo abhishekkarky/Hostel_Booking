@@ -8,14 +8,19 @@
   <link rel="stylesheet" th:href="@{/css/header.css}">
   <link rel="stylesheet" th:href="@{/css/footer.css}">
   <link rel="stylesheet" th:href="@{/css/single-seater.css}">
+  <link rel="stylesheet" th:href="@{/css/preloader.css}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script th:src="@{/javascript/preloader.js}" defer></script>
 </head>
 <body>
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
   <header th:replace="~{/fragments/header.html}"></header>
   <main class="single-main-wrap">
     <div class="single-first">
@@ -51,8 +56,13 @@
       </div>
       <div class="room-div-three">
         <div class="rating-div">
-          <p>Rating</p>
-          <p class="rating">5.0</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
         </div>
         <a class="room-div-three-anchor" href="">Book Now</a>
       </div>
@@ -74,8 +84,13 @@
       </div>
       <div class="room-div-three">
         <div class="rating-div">
-          <p>Rating</p>
-          <p class="rating">5.0</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
         </div>
         <a class="room-div-three-anchor" href="">Book Now</a>
       </div>
@@ -97,8 +112,13 @@
       </div>
       <div class="room-div-three">
         <div class="rating-div">
-          <p>Rating</p>
-          <p class="rating">5.0</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
         </div>
         <a class="room-div-three-anchor" href="">Book Now</a>
       </div>
@@ -120,8 +140,13 @@
       </div>
       <div class="room-div-three">
         <div class="rating-div">
-          <p>Rating</p>
-          <p class="rating">5.0</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
         </div>
         <a class="room-div-three-anchor" href="">Book Now</a>
       </div>
@@ -143,8 +168,13 @@
       </div>
       <div class="room-div-three">
         <div class="rating-div">
-          <p>Rating</p>
-          <p class="rating">5.0</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
         </div>
         <a class="room-div-three-anchor" href="">Book Now</a>
       </div>

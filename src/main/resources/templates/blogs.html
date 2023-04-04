@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Booking</title>
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/blogs.css}">
+  <link rel="stylesheet" th:href="@{/css/preloader.css}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script th:src="@{/javascript/preloader.js}" defer></script>
+</head>
+<body>
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+  <header th:replace="~{/fragments/header.html}"></header>
+  <main class="blogs-main">
+    <div class="blogs-main-head">
+      <div class="blogs-main-head-left">
+        <h2>Blogs</h2>
+        <p class="subtitle">Latest blogs from us are listed here.</p>
+      </div>
+      <div class="blogs-main-head-right">
+        <img class="blogs-head-image" th:src="@{/images/blog.png}" alt="">
+      </div>
+    </div>
+    <br>
+    <div class="blogs-main-body">
+      <div class="blogs-main-body-first">
+        <h2>Latest Blogs :</h2>
+      </div>
+    </div>
+    <div class="blogs-tile-div">
+      <div class="blogs-tile">
+        <div class="blogs-tile-image-div">
+          <img th:src="@{/images/pica.jpg}" alt="">
+        </div>
+        <div class="blogs-tile-heading">
+          <p>Heading</p>
+        </div>
+        <div class="date-div">
+          <i class="fa-solid fa-clock"></i>
+          <p>January 30th</p>
+        </div>
+        <div class="blogs-tile-description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+        </div>
+        <a class="blogs-tile-anchor" href="">Read More</a>
+      </div>
+      <div class="blogs-tile">
+        <div class="blogs-tile-image-div">
+          <img th:src="@{/images/pica.jpg}" alt="">
+        </div>
+        <div class="blogs-tile-heading">
+          <p>Heading</p>
+        </div>
+        <div class="date-div">
+          <i class="fa-solid fa-clock"></i>
+          <p>January 30th</p>
+        </div>
+        <div class="blogs-tile-description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+        </div>
+        <a class="blogs-tile-anchor" href="">Read More</a>
+      </div>
+      <div class="blogs-tile">
+        <div class="blogs-tile-image-div">
+          <img th:src="@{/images/pica.jpg}" alt="">
+        </div>
+        <div class="blogs-tile-heading">
+          <p>Heading</p>
+        </div>
+        <div class="date-div">
+          <i class="fa-solid fa-clock"></i>
+          <p>January 30th</p>
+        </div>
+        <div class="blogs-tile-description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+        </div>
+        <a class="blogs-tile-anchor" href="">Read More</a>
+      </div>
+      <div class="blogs-tile">
+        <div class="blogs-tile-image-div">
+          <img th:src="@{/images/pica.jpg}" alt="">
+        </div>
+        <div class="blogs-tile-heading">
+          <p>Heading</p>
+        </div>
+        <div class="date-div">
+          <i class="fa-solid fa-clock"></i>
+          <p>January 30th</p>
+        </div>
+        <div class="blogs-tile-description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+        </div>
+        <a class="blogs-tile-anchor" href="">Read More</a>
+      </div>
+      <div class="blogs-tile">
+        <div class="blogs-tile-image-div">
+          <img th:src="@{/images/pica.jpg}" alt="">
+        </div>
+        <div class="blogs-tile-heading">
+          <p>Heading</p>
+        </div>
+        <div class="date-div">
+          <i class="fa-solid fa-clock"></i>
+          <p>January 30th</p>
+        </div>
+        <div class="blogs-tile-description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+        </div>
+        <a class="blogs-tile-anchor" href="">Read More</a>
+      </div>
+      <div class="blogs-tile">
+        <div class="blogs-tile-image-div">
+          <img th:src="@{/images/pica.jpg}" alt="">
+        </div>
+        <div class="blogs-tile-heading">
+          <p>Heading</p>
+        </div>
+        <div class="date-div">
+          <i class="fa-solid fa-clock"></i>
+          <p>January 30th</p>
+        </div>
+        <div class="blogs-tile-description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+        </div>
+        <a class="blogs-tile-anchor" href="">Read More</a>
+      </div>
+    </div>
+  </main>
+  <br>
+  <footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>

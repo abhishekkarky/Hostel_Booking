@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Booking</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/room-description.css}">
+    <link rel="stylesheet" th:href="@{/css/preloader.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/javascript/preloader.js}" defer></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header th:replace="~{/fragments/header.html}"></header>
+    <br>
+    <main class="room-description-main">
+        <div class="room-description-main-div">
+            <div class="room-description-main-first">
+                <div class="room-description-main-first-text">
+                    <h2>Canvas Hostel</h2>
+                    <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
+                </div>
+
+                <a class="room-description-main-anchor" href="">Book Now</a>
+            </div>
+            <div class="room-description-main-second">
+                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+            </div>
+            <br>
+            <div class="room-description-main-third">
+                <div class="room-description-main-third-div">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Parking</p>
+                </div>
+                <div class="room-description-main-third-div">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Laundry</p>
+                </div>
+                <div class="room-description-main-third-div">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Fooding</p>
+                </div>
+                <div class="room-description-main-third-div">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Internet</p>
+                </div>
+            </div>
+            <br>
+            <div class="room-description-main-fourth">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nulla suscipit esse enim facilis alias sequi impedit reprehenderit corporis id rerum architecto deserunt in laboriosam ex, quos quisquam. Sint, quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo assumenda aliquam, fugit sint optio delectus perspiciatis illum blanditiis necessitatibus ratione non, quo, impedit reiciendis. Aliquam eligendi aliquid omnis tempore magnam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti soluta enim quas accusantium impedit consequuntur nisi. Quo, impedit blanditiis? Corporis nihil vel sint, necessitatibus ipsum earum tenetur? Sequi, fugiat! Necessitatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo illum, non ratione, perspiciatis, enim expedita quis dolorem dolor similique voluptate ipsum qui ipsa quia neque? Nisi, nesciunt. A, repudiandae error. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit animi quibusdam quam. Nulla quidem, temporibus exercitationem deserunt rerum expedita odio corrupti distinctio aperiam. Explicabo totam corporis repellendus officia pariatur voluptate?</p>
+            </div>
+        </div>
+    </main>
+    <br>
+    <footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>

@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/landing")
+@RequestMapping("")
 public class LandingController {
-    @GetMapping("")
+    @GetMapping("/landing")
     public String getLandingPage() {
         return "index";
     }
@@ -18,4 +18,11 @@ public class LandingController {
     public String getContactPage() {
         return "contact";
     }
+
+    @GetMapping("/blogs")
+    public String getBlogs() {
+        return "blogs";
+    }
+
+
 }

@@ -14,4 +14,10 @@ public class RoomController {
     public String getSingleSeater() {
         return "single-seater";
     }
+
+    @GetMapping("/room-description")
+        public String getRoomDescription() {
+        return "room-description";
+    }
+
 }

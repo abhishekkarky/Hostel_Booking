@@ -91,6 +91,17 @@ html {
     border-bottom-right-radius: 10px;
     cursor: pointer;
 }
+.room-anchor-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 30vh;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .room-div {
     display: flex;
     align-items: center;
@@ -142,7 +153,7 @@ html {
 }
 .rating-div {
     display: flex;
-    width: 70%;
+    width: 77%;
     justify-content: space-evenly;
 }
 .room-div-three-anchor {
@@ -169,4 +180,13 @@ html {
 }
 .room-div-three-anchor:hover {
     opacity: 0.9;
+}
+.room-div-three .rating-div .stars .fa-solid {
+    color: #FDCC0D;
+}
+.heading-anchor {
+    color: black;
+}
+.heading-anchor:hover {
+    color: #434c54;
 }

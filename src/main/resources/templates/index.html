@@ -8,14 +8,19 @@
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/preloader.css}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/javascript/preloader.js}" defer></script>
 </head>
 <body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
     <header th:replace="~{/fragments/header.html}"></header>
     <main>
         <div class="first">
@@ -133,53 +138,101 @@
                 <a class="fortha" href="">See More</a>
             </div>
             <div class="forthsecond">
-                <div class="tiles">
-                    <h3 class="tile-title">Title</h3>
-                    <div class="description">
-                        <p class="tile-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis pariatur consectetur alias voluptate praesentium dicta. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, optio illo, doloribus numquam saepe delectus asperiores alias placeat, id error aliquam. Deserunt architecto sequi cum eum impedit explicabo inventore iste.
-                        </p>
+                <div class="blogs-tile">
+                    <div class="blogs-tile-image-div">
+                        <img th:src="@{/images/pica.jpg}" alt="">
                     </div>
+                    <div class="blogs-tile-heading">
+                        <p>Heading</p>
+                    </div>
+                    <div class="date-div">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>January 30th</p>
+                    </div>
+                    <div class="blogs-tile-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+                    </div>
+                    <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>
-                <div class="tiles">
-                    <h3 class="tile-title">Title</h3>
-                    <div class="description">
-                        <p class="tile-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis pariatur consectetur alias voluptate praesentium dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut minima quod itaque sunt, eum nesciunt sed impedit accusamus. Eligendi tenetur esse similique. Cupiditate quidem esse asperiores minus fugit provident!
-                        </p>
+                <div class="blogs-tile">
+                    <div class="blogs-tile-image-div">
+                        <img th:src="@{/images/pica.jpg}" alt="">
                     </div>
+                    <div class="blogs-tile-heading">
+                        <p>Heading</p>
+                    </div>
+                    <div class="date-div">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>January 30th</p>
+                    </div>
+                    <div class="blogs-tile-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+                    </div>
+                    <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>
-                <div class="tiles">
-                    <h3 class="tile-title">Title</h3>
-                    <div class="description">
-                        <p class="tile-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis pariatur consectetur alias voluptate praesentium dicta. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae labore sapiente exercitationem eveniet ratione maxime eligendi doloremque commodi veritatis quam adipisci, modi, quis nemo, nihil eum temporibus facilis animi fugit!
-                        </p>
+                <div class="blogs-tile">
+                    <div class="blogs-tile-image-div">
+                        <img th:src="@{/images/pica.jpg}" alt="">
                     </div>
+                    <div class="blogs-tile-heading">
+                        <p>Heading</p>
+                    </div>
+                    <div class="date-div">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>January 30th</p>
+                    </div>
+                    <div class="blogs-tile-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+                    </div>
+                    <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>
-                <div class="tiles">
-                    <h3 class="tile-title">Title</h3>
-                    <div class="description">
-                        <p class="tile-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis pariatur consectetur alias voluptate praesentium dicta. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium obcaecati voluptatibus animi quod, est alias maxime debitis aut adipisci esse ipsa suscipit hic ipsam deserunt atque, recusandae nam, quasi aspernatur.
-                        </p>
+                <div class="blogs-tile">
+                    <div class="blogs-tile-image-div">
+                        <img th:src="@{/images/pica.jpg}" alt="">
                     </div>
+                    <div class="blogs-tile-heading">
+                        <p>Heading</p>
+                    </div>
+                    <div class="date-div">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>January 30th</p>
+                    </div>
+                    <div class="blogs-tile-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+                    </div>
+                    <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>
-                <div class="tiles">
-                    <h3 class="tile-title">Title</h3>
-                    <div class="description">
-                        <p class="tile-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis pariatur consectetur alias voluptate praesentium dicta. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, doloremque voluptatum modi mollitia, laboriosam temporibus sapiente reprehenderit tempora dignissimos perspiciatis repellendus quam cupiditate libero ut quaerat ducimus porro fuga possimus.
-                        </p>
+                <div class="blogs-tile">
+                    <div class="blogs-tile-image-div">
+                        <img th:src="@{/images/pica.jpg}" alt="">
                     </div>
+                    <div class="blogs-tile-heading">
+                        <p>Heading</p>
+                    </div>
+                    <div class="date-div">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>January 30th</p>
+                    </div>
+                    <div class="blogs-tile-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+                    </div>
+                    <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>
-                <div class="tiles">
-                    <h3 class="tile-title">Title</h3>
-                    <div class="description">
-                        <p class="tile-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis pariatur consectetur alias voluptate praesentium dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, nam qui voluptate saepe a eveniet modi dolore inventore ipsum ipsa vitae quas, omnis, natus minima iure consequuntur commodi ut perspiciatis!
-                        </p>
+                <div class="blogs-tile">
+                    <div class="blogs-tile-image-div">
+                        <img th:src="@{/images/pica.jpg}" alt="">
                     </div>
+                    <div class="blogs-tile-heading">
+                        <p>Heading</p>
+                    </div>
+                    <div class="date-div">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>January 30th</p>
+                    </div>
+                    <div class="blogs-tile-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+                    </div>
+                    <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>
             </div>
         </div>
