@@ -43,12 +43,12 @@ html {
     align-items: center;
 }
 .single-first-main h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600;
     color: black;
 }
 .subtitle {
-    font-size: 17px;
+    font-size: 1.063rem;
 }
 .single-search-div {
     display: flex;
@@ -58,7 +58,7 @@ html {
     height: 10vh;
 }
 .fa-solid {
-    font-size: 17px;
+    font-size: 1.063rem;
     color: #6b7985;
     background-color: transparent;
 }
@@ -72,7 +72,7 @@ html {
 .search-input {
     width: 360px;
     height: 5.5vh;
-    font-size: 15px;
+    font-size: 0.938rem;
     padding-left: 10px;
     background-color: transparent;
     outline: none;
@@ -133,7 +133,7 @@ html {
 }
 .room-div-two h2 {
     font-family: "Roboto Thin";
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 .for-location {
     display: flex;
@@ -174,7 +174,7 @@ html {
     color: white;
     border-radius: 5px;
     font: 500;
-    font-size: 18px;
+    font-size: 1.125rem;
     border: 0;
     outline: none;
 }

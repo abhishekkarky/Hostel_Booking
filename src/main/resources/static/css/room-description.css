@@ -47,7 +47,7 @@ html {
     border-radius: 10px;
 }
 .room-description-main-anchor:hover {
-    font-size: 17px;
+    font-size: 1.063rem;
     opacity: 0.8;
 }
 .room-description-main-second {
@@ -55,7 +55,6 @@ html {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    align-items: center;
     width: 100%;
     overflow: hidden;
 }

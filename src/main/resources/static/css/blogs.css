@@ -43,7 +43,7 @@ html {
     align-items: center;
 }
 .subtitle {
-    font-size: 17px;
+    font-size: 1.063rem;
 }
 .blogs-main-head-left h2{
     font-size: 40px;
@@ -91,10 +91,10 @@ html {
     margin-top: 7px;
 }
 .blogs-tile-heading p {
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .fa-solid {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #6b7985;
 }
 .blogs-tile-image-div {
@@ -117,7 +117,7 @@ html {
 }
 .date-div p {
     color: #6b7985;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 .blogs-tile-description {
     width: 100%;
@@ -137,7 +137,7 @@ html {
     align-items: center;
     margin-top: 7px;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 .blogs-tile-anchor:hover {
     opacity: 0.8;

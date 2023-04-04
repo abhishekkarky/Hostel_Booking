@@ -43,10 +43,10 @@ html {
     align-items: center;
 }
 .subtitle {
-    font-size: 17px;
+    font-size: 1.063rem;
 }
 .main-contact h2{
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600;
     color: black;
 }
@@ -96,7 +96,7 @@ html {
     height: 100%;
     width: 380px;
     border-radius: 6px;
-    font-size: 15px;
+    font-size: 0.938rem;
     padding-left: 10px;
     background-color: transparent;
     outline: none;
@@ -122,13 +122,13 @@ html {
     border: 0;
     outline: 0;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 0.938rem;
     margin-bottom: 20px;
     cursor: pointer;
 }
 .contact-button:hover {
     background-color: #505a63;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .wrap-second {
     display: flex;
