@@ -15,7 +15,7 @@ public class RoomController {
         return "single-seater";
     }
 
-    @GetMapping("/room-description")
+    @GetMapping("/description")
         public String getRoomDescription() {
         return "room-description";
     }
