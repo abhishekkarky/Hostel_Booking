@@ -29,5 +29,10 @@ public class LandingController {
         return "services";
     }
 
+    @GetMapping("/about")
+    public String getAboutPage() {
+        return "about";
+    }
+
 
 }

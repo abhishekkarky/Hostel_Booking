@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Booking</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/about.css}">
+    <link rel="stylesheet" th:href="@{/css/preloader.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/javascript/preloader.js}" defer></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header th:replace="~{/fragments/header.html}"></header>
+    <main class="about-main">
+        <div class="single-first">
+            <div class="single-first-main">
+                <h2>About us</h2>
+                <p class="subtitle">Wanna know about us?</p>
+            </div>
+            <div class="single-first-image">
+                <img class="single-image" th:src="@{/images/about.svg}" alt="">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="about-main-first">
+            <div class="aabout-main-second-heading">
+                <h2>Our mission</h2>
+            </div>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi saepe aliquid minima commodi. Neque quibusdam assumenda eos laudantium temporibus consectetur quos voluptates nulla, necessitatibus harum ex fuga nisi debitis rem?</p>
+        </div>
+        <br>
+        <div class="about-main-second">
+            <div class="about-main-second-heading">
+                <h2>Our Teams</h2>
+            </div>
+            <br>
+            <div class="teams-div">
+                <div class="teams-tile">
+                    <div class="image-div">
+                        <img class="image-div-image" th:src="@{/images/abhi.JPG}" alt="">
+                    </div>
+                    <div class="teams-description">
+                        <p class="teams-description-p">Abhishek karki</p>
+                        <div class="teams-description-links">
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/facebook.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/instagram.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/github.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/coding-2.png}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="teams-tile">
+                    <div class="image-div">
+                        <img class="image-div-image" th:src="@{/images/amul.jpg}" alt="">
+                    </div>
+                    <div class="teams-description">
+                        <p class="teams-description-p">Amul Bashyal</p>
+                        <div class="teams-description-links">
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/facebook.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/instagram.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/github.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/coding-2.png}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="teams-tile">
+                    <div class="image-div">
+                        <img class="image-div-image" th:src="@{/images/nawin.jpg}" alt="">
+                    </div>
+                    <div class="teams-description">
+                        <p class="teams-description-p">Nawin mainali</p>
+                        <div class="teams-description-links">
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/facebook.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/instagram.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/github.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/coding-2.png}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="teams-tile">
+                    <div class="image-div">
+                        <img class="image-div-image" th:src="@{/images/abhi.JPG}" alt="">
+                    </div>
+                    <div class="teams-description">
+                        <p class="teams-description-p">Abhishek karki</p>
+                        <div class="teams-description-links">
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/facebook.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/instagram.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/github.png}" alt=""></a>
+                            <a class="teams-description-anchor" href=""><img class="links" th:src="@{/images/coding-2.png}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>
