@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/admin-dashboard.css}">
+    <title>Blogs List</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin-list-page.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin-dashboard.css}">
 </head>
 <body>
 
@@ -18,7 +20,7 @@
             <span class="material-icons-outlined">menu</span>
         </div>
         <div class="main-title">
-            <h2>DASHBOARD</h2>
+            <h2>Blogs List</h2>
         </div>
 
     </header>
@@ -74,51 +76,50 @@
         </ul>
     </aside>
 
-    <!--Main-->
+    <!-- Main -->
     <main class="main-container">
+        <div class="order-table">
+            <form>
+                <table class="content-table" id="table_id">
+                    <thead>
+                    <tr>
+                        <th>Thumbnail</th>
+                        <th>Topic</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Photo</td>
+                        <td>Title</td>
+                        <td> This is akfnskjdnfkjdsnvjkeswnbvkjsdbnvjkdsbnvkjdfnbvjkdfbnvjdfnbvdfrnbvjkdefrnv</td>
+                        <td><a class="delete-button" href="">Edit</a> <a class="delete-button" href="">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <script
+                        type="text/javascript"
+                        charset="utf8"
+                        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+                ></script>
+                <script
+                        type="text/javascript"
+                        charset="utf8"
+                        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+                    document.getElementsByClassName()
+                </script>
+                <script>
+                    $(function() {
+                        $("#table_id").dataTable();
+                    });
+                </script>
 
-        <div class="main-cards">
-
-            <div class="card">
-                <div class="card-inner">
-                    <h3>TOTAL SINGLE SEATER ROOMS</h3>
-                </div>
-                <h1>14</h1>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <h3>TOTAL DOUBLE SEATER ROOMS</h3>
-                </div>
-                <h1>14</h1>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <h3>TOTAL TRIPLE SEATER ROOMS</h3>
-                </div>
-                <h1>14</h1>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <h3>TOTAL FOUR SEATER ROOMS</h3>
-                </div>
-                <h1>14</h1>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <h3>TOTAL BOOKINGS</h3>
-                </div>
-                <h1>14</h1>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <h3>TOTAL BLOGS</h3>
-                </div>
-                <h1>14</h1>
-            </div>
+                <br><br>
+            </form>
         </div>
     </main>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
 <script type="text/javascript" th:src="@{/javascript/admin-dashboard.js}"></script>
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostellers Nepal || Admin Login</title>
+  <link rel="stylesheet" th:href="@{/css/admin-login.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <script th:src="@{/javascript/admin-login.js}" defer></script>
+</head>
+<body>
+<div id="error" th:if="${message}">
+  <div th:replace="~{fragments/errorMsg.html :: message}"></div>
+</div>
+<div id="error" th:if="${errorMsg}">
+  <div th:replace="~{fragments/errorMsg.html :: errorMsg}"></div>
+</div>
+<div id="error"></div>
+<main class="admin-login-main">
+  <form class="admin-login-form" th:action="@{/192.168.0.1.1}" method="post">
+    <br>
+    <h2>Login here</h2>
+    <div class="login-fields">
+      <div class="input-fields">
+        <i class="fa-solid fa-at"></i>
+        <input class="input" type="email" id="email" name="email" placeholder="Enter your email address...">
+      </div>
+      <div class="input-fields">
+        <i class="fa-solid fa-lock"></i>
+        <input class="input" type="password" id="password" name="password" placeholder="Enter your password...">
+      </div>
+      <br>
+      <button class="login-button" id="button" type="submit">Login</button>
+    </div>
+  </form>
+</main>
+</body>
+</html>
