@@ -119,19 +119,19 @@
         </div>
         <a class="blogs-tile-anchor" href="">Read More</a>
       </div>
-      <div class="blogs-tile">
+      <div class="blogs-tile" th:each="blog:${blogs}">
         <div class="blogs-tile-image-div">
-          <img th:src="@{/images/pica.jpg}" alt="">
+          <img th:src="'data:image/png;base64,'+${blog.imageBase64}" alt="">
         </div>
         <div class="blogs-tile-heading">
-          <p>Heading</p>
+          <p th:text="${blog.topic}"></p>
         </div>
         <div class="date-div">
           <i class="fa-solid fa-clock"></i>
           <p>January 30th</p>
         </div>
         <div class="blogs-tile-description">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, vitae sequi voluptate modi hic molestiae nam nobis fuga nihil ducimus consequatur ipsam. Delectus fuga ullam possimus nostrum quos iusto debitis.</p>
+          <p th:text="${blog.description}"></p>
         </div>
         <a class="blogs-tile-anchor" href="">Read More</a>
       </div>

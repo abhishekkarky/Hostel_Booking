@@ -77,14 +77,14 @@
   </aside>
   <!-- Main -->
   <main class="main-container">
-    <form method="post" enctype="multipart/form-data">
+    <form th:method="post" th:action="@{/192.168.1.1.1/save/triple-seater-room}" th:object="${ts}" enctype="multipart/form-data">
       <div class="form-fields">
-        <input type="number" hidden="hidden" name="id">
-        <input type="file" name="photo" accept="image/*" id="photo" class="form-control-file" required>
-        <input type="text" name="name" id="name" placeholder="Enter the Hostel's name..." required>
-        <input type="text" name="location" id="location" placeholder="Enter the Hostel's Location..." required>
-        <input type="text" name="price" id="price" placeholder="Enter the Hostel's price..." required>
-        <input type="text" name="description" id="description" placeholder="Enter the Hostel's Description..." required>
+        <input type="number" hidden="hidden" name="id" th:field="*{id}" th:value="${ts.id}">
+        <input type="file" name="photo" accept="image/*" id="photo" class="form-control-file" required th:value="${ts.getPhoto()}">
+        <input type="text" name="name" id="name" placeholder="Enter the Hostel's name..." required  th:field="*{name}" th:value="${ts.getName()}">
+        <input type="text" name="location" id="location" placeholder="Enter the Hostel's Location..." required th:field="*{location}" th:value="${ts.getLocation()}">
+        <input type="text" name="price" id="price" placeholder="Enter the Hostel's price..." required th:field="*{price}" th:value="${ts.getPrice()}">
+        <input type="text" name="description" id="description" placeholder="Enter the Hostel's Description..." required th:field="*{description}" th:value="${ts.getDescription()}">
         <button type="submit">Add Hostel</button>
       </div>
     </form>
