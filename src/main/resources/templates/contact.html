@@ -34,7 +34,7 @@
     </div>
     <br>
     <div class="contact-wrap">
-      <form class="wrap-first">
+      <form class="wrap-first" th:method="post" th:action="@{/saveQueries}" th:object="${queries}">
         <br>
         <h2 class="form-title">
           Any Queries?
@@ -43,25 +43,25 @@
         <div class="for-fields">
           <div class="input-fields">
             <i class="fa-solid fa-user"></i>
-            <input class="input" type="text" id="name" name="name" placeholder="Full Name..." required>
+            <input class="input" type="text" id="name" name="name" placeholder="Full Name..." required th:field="*{name}">
           </div>
           <div class="input-fields">
             <i class="fa-solid fa-at"></i>
-            <input class="input" type="email" id="email" name="email" placeholder="Email-address..." required>
+            <input class="input" type="email" id="email" name="email" placeholder="Email-address..." required th:field="*{email}">
           </div>
           <div class="input-fields">
             <i class="fa-solid fa-mobile"></i>
-            <input class="input" type="tel" id="number" name="number" placeholder="Mobile Number..." required>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="Mobile Number..." required th:field="*{phone}">
           </div>
           <div class="input-fields">
             <i class="fa-solid fa-location-dot"></i>
-            <input class="input" type="text" id="address" name="address" placeholder="Address..." required>
+            <input class="input" type="text" id="address" name="address" placeholder="Address..." required th:field="*{address}">
           </div>
           <div class="input-fields">
             <i class="fa-solid fa-text"></i>
-            <input class="input" type="text" id="subject" name="subject" placeholder="Subject..." required>
+            <input class="input" type="text" id="subject" name="subject" placeholder="Subject..." required th:field="*{subject}">
           </div>
-          <textarea class="contact-textarea" type="text" id="description" name="description" placeholder="Description..." required></textarea>
+          <textarea class="contact-textarea" type="text" id="description" name="description" placeholder="Description..." required th:field="*{message}"></textarea>
           <br>
           <button class="contact-button" id="button" type="submit">Submit</button>
         </div>

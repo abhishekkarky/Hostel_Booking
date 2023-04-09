@@ -71,6 +71,9 @@
                 <i class="fa-solid fa-list-ul"></i> <a th:href="@{/192.168.1.1.1/blogs-list}">Blogs List</a>
             </li>
             <li class="sidebar-list-item">
+                <i class="fa-solid fa-list-ul"></i> <a th:href="@{/192.168.1.1.1/query}">Queries List</a>
+            </li>
+            <li class="sidebar-list-item">
                 <i class="fa-solid fa-right-from-bracket"></i> <a th:href="@{/logout}">logout</a>
             </li>
         </ul>
@@ -92,13 +95,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Photo</td>
-                        <td>Canvas Hostel</td>
-                        <td>Maitidevi, Kathmandu</td>
-                        <td>Rs. 10000</td>
-                        <td> This is akfnskjdnfkjdsnvjkeswnbvkjsdbnvjkdsbnvkjdfnbvjkdfbnvjdfnbvdfrnbvjkdefrnv</td>
-                        <td><a class="delete-button" href="">Edit</a> <a class="delete-button" href="">Delete</a></td>
+                    <tr th:each="double:${ds}">
+                        <td><img th:src="'data:image/png;base64,'+${double.imageBase64}" width="100" height="100"/></td>
+                        <td th:text="${double.name}"></td>
+                        <td th:text="${double.location}"></td>
+                        <td th:text="${double.price}"></td>
+                        <td th:text="${double.description}"></td>
+                        <td><a class="delete-button" th:href="@{~/192.168.1.1.1/editDoubleSeater/}+${double.id}">Edit</a> <a class="delete-button" th:href="@{~/192.168.1.1.1/deleteDoubleSeater/}+${double.id}">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>

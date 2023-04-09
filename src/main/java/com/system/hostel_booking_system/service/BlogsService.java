@@ -10,4 +10,8 @@ public interface BlogsService {
     String save(BlogsPojo blogsPojo) throws IOException;
 
     List<Blogs> fetchAll();
+
+    Blogs fetchById(Integer id);
+
+    void deleteById(Integer id);
 }

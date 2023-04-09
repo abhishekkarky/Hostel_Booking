@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Four Seater Rooms List</title>
+  <title>Query Section</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -20,7 +20,7 @@
       <span class="material-icons-outlined">menu</span>
     </div>
     <div class="main-title">
-      <h2>Four Seater Rooms List</h2>
+      <h2>Query List</h2>
     </div>
 
   </header>
@@ -86,22 +86,24 @@
         <table class="content-table" id="table_id">
           <thead>
           <tr>
-            <th>Thumbnail</th>
             <th>Name</th>
-            <th>Location</th>
-            <th>Price</th>
-            <th>Description</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Subject</th>
+            <th>Message</th>
             <th>Action</th>
           </tr>
           </thead>
           <tbody>
-          <tr th:each="four:${fs}">
-            <td><img th:src="'data:image/png;base64,'+${four.imageBase64}" width="100" height="100"/></td>
-            <td th:text="${four.name}"></td>
-            <td th:text="${four.location}"></td>
-            <td th:text="${four.price}"></td>
-            <td th:text="${four.description}"></td>
-            <td><a class="delete-button" th:href="@{~/192.168.1.1.1/editFourSeater/}+${four.id}">Edit</a> <a class="delete-button" th:href="@{~/192.168.1.1.1/deleteFourSeater/}+${four.id}">Delete</a></td>
+          <tr th:each="query:${queries}">
+            <td th:text="${query.name}"></td>
+            <td th:text="${query.email}"></td>
+            <td th:text="${query.phone}"></td>
+            <td th:text="${query.address}"></td>
+            <td th:text="${query.subject}"></td>
+            <td th:text="${query.message}"></td>
+            <td><a class="delete-button" th:href="@{~/192.168.1.1.1/deleteQuery/}+${query.id}">Delete</a></td>
           </tr>
           </tbody>
         </table>

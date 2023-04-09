@@ -10,4 +10,8 @@ public interface SingleSeaterService {
     String save(SingleSeaterPojo singleSeaterPojo) throws IOException;
 
     List<SingleSeater> fetchAll();
+
+    SingleSeater fetchById(Integer id);
+
+    void deleteById(Integer id);
 }

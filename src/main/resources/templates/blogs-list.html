@@ -71,6 +71,9 @@
                 <i class="fa-solid fa-list-ul"></i> <a th:href="@{/192.168.1.1.1/blogs-list}">Blogs List</a>
             </li>
             <li class="sidebar-list-item">
+                <i class="fa-solid fa-list-ul"></i> <a th:href="@{/192.168.1.1.1/query}">Queries List</a>
+            </li>
+            <li class="sidebar-list-item">
                 <i class="fa-solid fa-right-from-bracket"></i> <a th:href="@{/logout}">logout</a>
             </li>
         </ul>
@@ -90,11 +93,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Photo</td>
-                        <td>Title</td>
-                        <td> This is akfnskjdnfkjdsnvjkeswnbvkjsdbnvjkdsbnvkjdfnbvjkdfbnvjdfnbvdfrnbvjkdefrnv</td>
-                        <td><a class="delete-button" href="">Edit</a> <a class="delete-button" href="">Delete</a></td>
+                    <tr th:each="blog:${blogs}">
+                        <td><img th:src="'data:image/png;base64,'+${blog.imageBase64}" width="100" height="100"/></td>
+                        <td th:text="${blog.topic}"></td>
+                        <td th:text="${blog.description}"></td>
+                        <td><a class="delete-button" th:href="@{~/192.168.1.1.1/editBlogs/}+${blog.id}">Edit</a> <a class="delete-button" th:href="@{~/192.168.1.1.1/editBlogs/}+${blog.id}">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>

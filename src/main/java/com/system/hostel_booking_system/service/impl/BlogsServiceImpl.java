@@ -82,6 +82,16 @@ public class BlogsServiceImpl implements BlogsService {
         return base64;
     }
 
+    @Override
+    public Blogs fetchById(Integer id) {
+        return blogsRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        blogsRepo.deleteById(id);
+    }
+
     public Long countRows() {
         return blogsRepo.countAllRows();
     }

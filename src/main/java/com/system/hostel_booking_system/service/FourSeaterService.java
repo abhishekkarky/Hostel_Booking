@@ -10,4 +10,8 @@ public interface FourSeaterService {
     String save(FourSeaterPojo fourSeaterPojo) throws IOException;
 
     List<FourSeater> fetchAll();
+
+    FourSeater fetchById(Integer id);
+
+    void deleteById(Integer id);
 }

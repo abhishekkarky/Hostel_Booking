@@ -86,6 +86,16 @@ public class TripleSeaterServiceImpl implements TripleSeaterService {
         return base64;
     }
 
+    @Override
+    public TripleSeater fetchById(Integer id) {
+        return tripleSeaterRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        tripleSeaterRepo.deleteById(id);
+    }
+
     public Long countRows() {
         return tripleSeaterRepo.countAllRows();
     }

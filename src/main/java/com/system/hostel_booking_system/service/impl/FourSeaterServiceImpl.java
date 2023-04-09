@@ -85,6 +85,16 @@ public class FourSeaterServiceImpl implements FourSeaterService {
         String base64 = Base64.getEncoder().encodeToString(bytes);
         return base64;
     }
+
+    @Override
+    public FourSeater fetchById(Integer id) {
+        return fourSeaterRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        fourSeaterRepo.deleteById(id);
+    }
     public Long countRows() {
         return fourSeaterRepo.countAllRows();
     }

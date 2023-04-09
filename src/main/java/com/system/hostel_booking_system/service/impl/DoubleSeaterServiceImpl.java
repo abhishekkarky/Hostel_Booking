@@ -86,6 +86,16 @@ public class DoubleSeaterServiceImpl implements DoubleSeaterService {
         return base64;
     }
 
+    @Override
+    public DoubleSeater fetchById(Integer id) {
+        return doubleSeaterRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        doubleSeaterRepo.deleteById(id);
+    }
+
     public Long countRows() {
         return doubleSeaterRepo.countAllRows();
     }

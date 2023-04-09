@@ -10,4 +10,9 @@ public interface DoubleSeaterService {
     String save(DoubleSeaterPojo doubleSeaterPojo) throws IOException;
 
     List<DoubleSeater> fetchAll();
+
+
+    DoubleSeater fetchById(Integer id);
+
+    void deleteById(Integer id);
 }

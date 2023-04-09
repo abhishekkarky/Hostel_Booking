@@ -57,6 +57,16 @@ public class SingleSeaterServiceImpl implements SingleSeaterService {
         return findAllInList(singleSeaterRepo.findAll());
     }
 
+    @Override
+    public SingleSeater fetchById(Integer id) {
+        return singleSeaterRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        singleSeaterRepo.deleteById(id);
+    }
+
     private List<SingleSeater> findAllInList(List<SingleSeater> list) {
         Stream<SingleSeater> allCart=list.stream().map(singleSeater ->
                 SingleSeater.builder()
