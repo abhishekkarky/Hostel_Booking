@@ -30,6 +30,7 @@ public class AdminController {
     private final TripleSeaterServiceImpl tripleSeaterServiceImpl;
     private final FourSeaterServiceImpl fourSeaterServiceImpl;
     private final BlogsServiceImpl blogsServiceImpl;
+    private final BookingServiceImpl bookingServiceImpl;
     private final QueryService queryService;
 
     @GetMapping("")
@@ -49,6 +50,9 @@ public class AdminController {
 
         Long blogs = blogsServiceImpl.countRows();
         model.addAttribute("countBlogs",blogs);
+
+        Long booking = bookingServiceImpl.countRows();
+        model.addAttribute("countBooking",booking);
 
         return "admin-dashboard";
     }
