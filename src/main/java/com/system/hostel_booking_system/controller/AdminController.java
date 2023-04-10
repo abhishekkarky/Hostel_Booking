@@ -32,6 +32,7 @@ public class AdminController {
     private final BlogsServiceImpl blogsServiceImpl;
     private final BookingServiceImpl bookingServiceImpl;
     private final QueryService queryService;
+    private final BookingService bookingService;
 
     @GetMapping("")
     public String getAdminDashboardPage(Model model) {
@@ -58,8 +59,16 @@ public class AdminController {
     }
 
     @GetMapping("/booking-list")
-    public String getAdminBookingListPage() {
+    public String getAdminBookingListPage(Model model) {
+        List<Booking> bookings = bookingService.fetchAll();
+        model.addAttribute("booking", bookings);
+
         return "booking-list";
+    }
+    @GetMapping("/deleteBooking/{id}")
+    public String deleteBooking(@PathVariable("id") Integer id) {
+        bookingService.deleteById(id);
+        return "redirect:/192.168.1.1.1/booking-list";
     }
 
     @GetMapping("/single-seater-rooms-list")

@@ -91,19 +91,21 @@
             <th>Mobile Number</th>
             <th>Hostel Name</th>
             <th>Hostel Location</th>
-            <th>Seater</th>
+            <th>Room Type</th>
+            <th>Check In</th>
             <th>Action</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Abhishek Karki</td>
-            <td>karkyabhishek@gmail.com</td>
-            <td>9846931874</td>
-            <td>Canvas Hostel</td>
-            <td>Maitidevi, Kathmandu</td>
-            <td>1</td>
-            <td><a class="delete-button">Delete</a></td>
+          <tr th:each="book:${booking}">
+            <td th:text="${book.name}">Abhishek Karki</td>
+            <td th:text="${book.email}">karkyabhishek@gmail.com</td>
+            <td th:text="${book.phone}">9846931874</td>
+            <td th:text="${book.hostel_name}">Canvas Hostel</td>
+            <td th:text="${book.hostel_location}">Maitidevi, Kathmandu</td>
+            <td th:text="${book.room_type}">1</td>
+            <td th:text="${book.checkin}"></td>
+            <td><a class="delete-button" th:href="@{~/192.168.1.1.1/deleteBooking/}+${book.id}">Delete</a></td>
           </tr>
           </tbody>
         </table>
