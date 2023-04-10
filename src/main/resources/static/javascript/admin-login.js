@@ -11,8 +11,8 @@ form.addEventListener("submit", (e) => {
     if (!email.value.match(format)) {
         messages.push("Enter a valid email address")
     }
-    if (password.value.length < 8 || password.value.length > 12) {
-        messages.push("Password must be length of 8-12")
+    if (password.value.length < 8 || password.value.length > 20) {
+        messages.push("Password must be length of 8-20")
     }
     if (messages.length > 0) {
         e.preventDefault()

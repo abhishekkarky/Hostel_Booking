@@ -85,6 +85,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     width: 400px;
     height: 500px;
     border-radius: 12px;
@@ -135,8 +136,11 @@ html {
     color: #6b7985;
     font-size: 0.938rem;
 }
+.button-div {
+    width: 95%;
+}
 .contact-button {
-    width: 380px;
+    width: 100%;
     height: 35px;
     background-color: #6b7985;
     color: white;
@@ -160,5 +164,16 @@ html {
 }
 .wrap-second-detail {
     display: flex;
+}
+@media (max-width: 765px) {
+    .main-contact {
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 15px;
+        width: 100%;
+    }
+    .contact-pic {
+        display: none;
+    }
 }
 

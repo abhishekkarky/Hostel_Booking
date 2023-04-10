@@ -149,4 +149,65 @@ html {
 .wrap-second-detail {
     display: flex;
 }
+@media(max-width: 1366px) {
+    .contact-wrap {
+        width: 100%;
+    }
+}
+@media(max-width: 1093px) {
+    .contact-wrap {
+        align-items: center;
+        flex-direction: column;
+    }
+    .wrap-first {
+        width: 70%;
+    }
+    .wrap-second {
+        width: 70%;
+    }
+}
+@media(max-width: 817px) {
+    .main-contact h2 {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 0.8rem;
+    }
+}
+@media(max-width: 631px) {
+    .contact-wrap {
+        width: 90%;
+    }
+    .wrap-first {
+        width: 100%;
+    }
+    .wrap-second {
+        width: 100%;
+    }
+}
+@media(max-width: 470px) {
+    .wrap-first {
+        padding-left: 0;
+    }
+    .input-fields {
+        width: 95%;
+    }
+    .contact-textarea {
+        width: 95%;
+    }
+    .contact-button {
+        width: 95%;
+    }
+}
+@media (max-width: 642px) {
+    .main-contact {
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 15px;
+        width: 100%;
+    }
+    .contact-pic {
+        display: none;
+    }
+}
 

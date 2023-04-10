@@ -81,7 +81,9 @@ html {
     justify-content: center;
     align-items: center;
     width: 270px;
+    height: 380px;
     border-radius: 12px;
+    margin-top: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .image-div {
@@ -129,4 +131,15 @@ html {
     align-items: center;
     width: 70%;
     margin-top: 8px;
+}
+@media (max-width: 572px) {
+    .single-first-main {
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 15px;
+        width: 100%;
+    }
+    .single-first-image {
+        display: none;
+    }
 }
