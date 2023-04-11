@@ -5,12 +5,14 @@ import com.system.hostel_booking_system.entity.FourSeater;
 import com.system.hostel_booking_system.entity.SingleSeater;
 import com.system.hostel_booking_system.entity.TripleSeater;
 import com.system.hostel_booking_system.pojo.BookingPojo;
+import com.system.hostel_booking_system.pojo.SingleSeaterPojo;
 import com.system.hostel_booking_system.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -54,14 +56,17 @@ public class RoomController {
         return "four-seater";
     }
 
-    @GetMapping("/description")
-        public String getRoomDescription() {
+    @GetMapping("/description/{id}")
+        public String getRoomDescription(@PathVariable("id") Integer id, Model model) {
+        SingleSeater singleSeaters = singleSeaterService.fetchById(id);
+        model.addAttribute("description", new SingleSeaterPojo(singleSeaters));
         return "room-description";
     }
 
-    @GetMapping("/booking")
-    public String getBookingForm(Model model) {
-        model.addAttribute("booking", new BookingPojo());
+    @GetMapping("/booking/{id}")
+    public String getBookingForm(@PathVariable("id") Integer id, Model model) {
+        SingleSeater singleSeaters = singleSeaterService.fetchById(id);
+        model.addAttribute("booking", new BookingPojo(singleSeaters));
         return "booking-form";
     }
 

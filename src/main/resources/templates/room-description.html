@@ -27,14 +27,14 @@
         <div class="room-description-main-div">
             <div class="room-description-main-first">
                 <div class="room-description-main-first-text">
-                    <h2>Canvas Hostel</h2>
-                    <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
+                    <h2 th:text="${description.getName()}"></h2>
+                    <p th:text="${description.getLocation()}"><i class="fa-solid fa-location-dot"></i> </p>
                 </div>
 
-                <a class="room-description-main-anchor" href="">Book Now</a>
+                <a class="room-description-main-anchor" th:href="@{~/room/booking/}+${description.id}">Book Now</a>
             </div>
             <div class="room-description-main-second">
-                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${description.getPhoto()}" alt="">
                 <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
                 <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
                 <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
@@ -62,7 +62,7 @@
             </div>
             <br>
             <div class="room-description-main-fourth">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nulla suscipit esse enim facilis alias sequi impedit reprehenderit corporis id rerum architecto deserunt in laboriosam ex, quos quisquam. Sint, quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo assumenda aliquam, fugit sint optio delectus perspiciatis illum blanditiis necessitatibus ratione non, quo, impedit reiciendis. Aliquam eligendi aliquid omnis tempore magnam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti soluta enim quas accusantium impedit consequuntur nisi. Quo, impedit blanditiis? Corporis nihil vel sint, necessitatibus ipsum earum tenetur? Sequi, fugiat! Necessitatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo illum, non ratione, perspiciatis, enim expedita quis dolorem dolor similique voluptate ipsum qui ipsa quia neque? Nisi, nesciunt. A, repudiandae error. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit animi quibusdam quam. Nulla quidem, temporibus exercitationem deserunt rerum expedita odio corrupti distinctio aperiam. Explicabo totam corporis repellendus officia pariatur voluptate?</p>
+                <p th:text="${description.getDescription()}"></p>
             </div>
         </div>
     </main>
