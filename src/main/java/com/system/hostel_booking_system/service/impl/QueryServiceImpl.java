@@ -36,4 +36,8 @@ public class QueryServiceImpl implements QueryService {
     public void deleteById(Integer id) {
         this.queriesRepo.deleteById(id);
     }
+
+    public Long countRows() {
+        return queriesRepo.countAllRows();
+    }
 }

@@ -12,6 +12,9 @@ body {
     font-size: 35px;
     cursor: pointer;
 }
+.profile-text {
+    padding-left: 15px;
+}
 
 .grid-container {
     display: grid;
@@ -80,8 +83,8 @@ body {
 }
 
 .sidebar-list-item {
-    padding: 15px 15px 15px 15px;
-    font-size: 16px;
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
 }
 
 .sidebar-list-item:hover {
@@ -127,6 +130,9 @@ body {
     padding: 25px;
     margin-top: 30px;
     border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 
 .card:first-child {
@@ -148,6 +154,9 @@ body {
     background-color: #2962ff;
 }
 .card:nth-child(6) {
+    background-color: #ff6d00;
+}
+.card:nth-child(7) {
     background-color: #ff6d00;
 }
 

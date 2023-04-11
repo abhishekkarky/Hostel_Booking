@@ -31,6 +31,7 @@ public class AdminController {
     private final FourSeaterServiceImpl fourSeaterServiceImpl;
     private final BlogsServiceImpl blogsServiceImpl;
     private final BookingServiceImpl bookingServiceImpl;
+    private final QueryServiceImpl queryServiceImpl;
     private final QueryService queryService;
     private final BookingService bookingService;
 
@@ -54,6 +55,9 @@ public class AdminController {
 
         Long booking = bookingServiceImpl.countRows();
         model.addAttribute("countBooking",booking);
+
+        Long queries = queryServiceImpl.countRows();
+        model.addAttribute("countQueries",queries);
 
         return "admin-dashboard";
     }
