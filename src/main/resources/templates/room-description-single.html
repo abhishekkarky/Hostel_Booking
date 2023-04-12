@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Booking</title>
+    <title>Hostel Booking || Single Seater Room Details</title>
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <link rel="stylesheet" th:href="@{/css/room-description.css}">
@@ -27,14 +27,14 @@
         <div class="room-description-main-div">
             <div class="room-description-main-first">
                 <div class="room-description-main-first-text">
-                    <h2 th:text="${description.getName()}"></h2>
-                    <p th:text="${description.getLocation()}"><i class="fa-solid fa-location-dot"></i> </p>
+                    <h2 th:text="${descriptionSingle.getName()}"></h2>
+                    <p th:text="${descriptionSingle.getLocation()}"><i class="fa-solid fa-location-dot"></i> </p>
                 </div>
 
-                <a class="room-description-main-anchor" th:href="@{~/room/booking/}+${description.id}">Book Now</a>
+                <a class="room-description-main-anchor" th:href="@{~/room/booking-single-seater/}+${descriptionSingle.id}">Book Now</a>
             </div>
             <div class="room-description-main-second">
-                <img class="rooms-image" th:src="'data:image/png;base64,'+${description.getPhoto()}" alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.getPhoto()}" alt="">
                 <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
                 <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
                 <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
@@ -62,7 +62,7 @@
             </div>
             <br>
             <div class="room-description-main-fourth">
-                <p th:text="${description.getDescription()}"></p>
+                <p th:text="${descriptionSingle.getDescription()}"></p>
             </div>
         </div>
     </main>

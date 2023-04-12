@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Booking Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/booking-form.css}">
+</head>
+<body>
+<div class="container">
+  <form id="form" th:method="post" th:action="@{/room/saveBookingFour}" th:object="${bookingFour}">
+    <h1>Book Now</h1>
+    <div class="input-control">
+      <label for="hostel_name">Hostel Name</label>
+      <input id="hostel_name" name="hostel_name" type="text" th:field="*{hostel_name}" th:value="${bookingFour.getHostel_name()}">
+    </div>
+    <div class="input-control">
+      <label for="hostel_location">Hostel Location</label>
+      <input id="hostel_location" name="hostel_location" type="text" th:field="*{hostel_location}" th:value="${bookingFour.getHostel_location()}">
+    </div>
+    <div class="input-control">
+      <label for="Name">FullName</label>
+      <input id="Name" name="name" type="text" th:field="*{name}">
+    </div>
+    <div class="input-control">
+      <label for="Phone">Phone</label>
+      <input id="Phone" name="phone" type="number" th:field="*{phone}">
+    </div>
+    <div class="input-control">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" th:field="*{email}">
+    </div>
+    <div class="input-control">
+      <label for="RoomType">Room Type</label>
+      <select name="room_type" id="RoomType" th:field="*{room_type}">
+<!--        <option value="1">One seater</option>-->
+<!--        <option value="2">Two seater</option>-->
+<!--        <option value="3">Three seater</option>-->
+        <option value="4">Four seater</option>
+      </select>
+    </div>
+
+    <div class="input-control">
+      <label for="Date">Check in</label>
+      <input type="Date" id="checkInDate" placeholder="Date" name="checkin" th:field="*{checkin}">
+      <div class="error"></div>
+    </div>
+    <button type="submit">Book Now</button>
+  </form>
+</div>
+</body>
+</html>

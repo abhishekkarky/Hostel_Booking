@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Form</title>
+    <title>Single Booking Form</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -12,15 +12,15 @@
 </head>
 <body>
 <div class="container">
-    <form id="form" th:method="post" th:action="@{/room/saveBooking}" th:object="${booking}">
+    <form id="form" th:method="post" th:action="@{/room/saveBookingSingle}" th:object="${bookingSingle}">
         <h1>Book Now</h1>
         <div class="input-control">
             <label for="hostel_name">Hostel Name</label>
-            <input id="hostel_name" name="hostel_name" type="text" th:field="*{hostel_name}" th:value="${booking.getHostel_name()}">
+            <input id="hostel_name" name="hostel_name" type="text" th:field="*{hostel_name}" th:value="${bookingSingle.getHostel_name()}">
         </div>
         <div class="input-control">
             <label for="hostel_location">Hostel Location</label>
-            <input id="hostel_location" name="hostel_location" type="text" th:field="*{hostel_location}" th:value="${booking.getHostel_location()}">
+            <input id="hostel_location" name="hostel_location" type="text" th:field="*{hostel_location}" th:value="${bookingSingle.getHostel_location()}">
         </div>
         <div class="input-control">
             <label for="Name">FullName</label>
@@ -38,9 +38,9 @@
             <label for="RoomType">Room Type</label>
             <select name="room_type" id="RoomType" th:field="*{room_type}">
                 <option value="1">One seater</option>
-                <option value="2">Two seater</option>
-                <option value="3">Three seater</option>
-                <option value="4">Four seater</option>
+<!--                <option value="2">Two seater</option>-->
+<!--                <option value="3">Three seater</option>-->
+<!--                <option value="4">Four seater</option>-->
             </select>
         </div>
 

@@ -41,10 +41,10 @@
     </div>
     <div class="room-div">
       <div class="room-div-one">
-        <a th:href="@{/room/description}"><img class="room-pic" th:src="@{/images/pica.jpg}"></a>
+        <a th:href="@{/room/single-seater-room-description}"><img class="room-pic" th:src="@{/images/pica.jpg}"></a>
       </div>
       <div class="room-div-two">
-        <a class="heading-anchor" th:href="@{/room/description}"><h2>Canvas Hostel</h2></a>
+        <a class="heading-anchor" th:href="@{/room/single-seater-room-description}"><h2>Canvas Hostel</h2></a>
         <div class="for-location">
           <i class="fa-solid fa-map-pin"></i>
           <p>Matitidevi, Kathmandu</p>
@@ -153,10 +153,10 @@
     </div>
     <div class="room-div" th:each="single:${ss}">
       <div class="room-div-one">
-        <a th:href="@{~/room/description/}+${single.id}"><img class="room-pic" th:src="'data:image/png;base64,'+${single.imageBase64}"/></a>
+        <a th:href="@{~/room/single-seater-room-description/}+${single.id}"><img class="room-pic" th:src="'data:image/png;base64,'+${single.imageBase64}"/></a>
       </div>
       <div class="room-div-two">
-        <a class="heading-anchor" th:href="@{~/room/description/}+${single.id}"><h2 th:text="${single.name}"></h2></a>
+        <a class="heading-anchor" th:href="@{~/room/single-seater-room-description/}+${single.id}"><h2 th:text="${single.name}"></h2></a>
         <div class="for-location">
           <i class="fa-solid fa-map-pin"></i>
           <p th:text="${single.location}"></p>
@@ -177,7 +177,7 @@
             <i class="fa-solid fa-star"></i>
           </div>
         </div>
-        <a class="room-div-three-anchor" th:href="@{~/room/booking/}+${single.id}">Book Now</a>
+        <a class="room-div-three-anchor" th:href="@{~/room/booking-single-seater/}+${single.id}">Book Now</a>
       </div>
     </div>
   </main>

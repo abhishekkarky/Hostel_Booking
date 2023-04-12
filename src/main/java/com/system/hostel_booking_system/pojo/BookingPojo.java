@@ -1,7 +1,6 @@
 package com.system.hostel_booking_system.pojo;
 
-import com.system.hostel_booking_system.entity.Booking;
-import com.system.hostel_booking_system.entity.SingleSeater;
+import com.system.hostel_booking_system.entity.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
@@ -51,4 +50,31 @@ public class BookingPojo {
         this.hostel_name = singleSeaters.getName();
         this.hostel_location = singleSeaters.getLocation();
     }
+
+    public BookingPojo(DoubleSeater doubleSeater) {
+        this.id = doubleSeater.getId();
+        this.hostel_name = doubleSeater.getName();
+        this.hostel_location = doubleSeater.getLocation();
+    }
+
+    public BookingPojo(TripleSeater tripleSeater) {
+        this.id = tripleSeater.getId();
+        this.hostel_name = tripleSeater.getName();
+        this.hostel_location = tripleSeater.getLocation();
+    }
+
+    public BookingPojo(FourSeater fourSeater) {
+        this.id = fourSeater.getId();
+        this.hostel_name = fourSeater.getName();
+        this.hostel_location = fourSeater.getLocation();
+    }
+
+//    public BookingPojo(SingleSeater singleSeaters, DoubleSeater doubleSeaters, TripleSeater tripleSeaters, FourSeater fourSeaters) {
+//        this.id = singleSeaters.getId();
+//        this.hostel_name = singleSeaters.getName();
+//        this.hostel_location = singleSeaters.getLocation();
+//        this.id = doubleSeaters.getId();
+//        this.hostel_name = doubleSeaters.getName();
+//        this.hostel_location
+//    }
 }

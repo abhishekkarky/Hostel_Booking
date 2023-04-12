@@ -99,4 +99,24 @@ public class TripleSeaterServiceImpl implements TripleSeaterService {
     public Long countRows() {
         return tripleSeaterRepo.countAllRows();
     }
+
+    @Override
+    public List<TripleSeater> fetchMostRecent() {
+        return listMapping(tripleSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
+    public List<TripleSeater> listMapping(List<TripleSeater> list) {
+        Stream<TripleSeater> recentTriple = list.stream().map(tripleSeater ->
+                TripleSeater.builder()
+                        .id(tripleSeater.getId())
+                        .name(tripleSeater.getName())
+                        .location(tripleSeater.getLocation())
+                        .imageBase64(getImageBase64(tripleSeater.getPhoto()))
+                        .price(tripleSeater.getPrice())
+                        .description(tripleSeater.getDescription())
+                        .build()
+        );
+        list = recentTriple.toList();
+        return list;
+    }
 }

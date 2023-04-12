@@ -1,10 +1,8 @@
 package com.system.hostel_booking_system.controller;
 
-import com.system.hostel_booking_system.entity.Blogs;
-import com.system.hostel_booking_system.entity.SingleSeater;
+import com.system.hostel_booking_system.entity.*;
 import com.system.hostel_booking_system.pojo.QueriesPojo;
-import com.system.hostel_booking_system.service.BlogsService;
-import com.system.hostel_booking_system.service.QueryService;
+import com.system.hostel_booking_system.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
@@ -25,6 +23,10 @@ import java.util.List;
 public class LandingController {
     private final BlogsService blogsService;
     private final QueryService queryService;
+    private final SingleSeaterService singleSeaterService;
+    private final DoubleSeaterService doubleSeaterService;
+    private final TripleSeaterService tripleSeaterService;
+    private final FourSeaterService fourSeaterService;
 
     @GetMapping("/landing")
     public String getLandingPage(Authentication authentication, Model model) {
@@ -38,6 +40,18 @@ public class LandingController {
         }
         List<Blogs> mostRecentBlogs = blogsService.fetchMostRecent();
         model.addAttribute("mostRecentBlogs", mostRecentBlogs);
+
+        List<SingleSeater> mostRecentSingleSeater = singleSeaterService.fetchMostRecent();
+        model.addAttribute("mostRecentSingleSeater", mostRecentSingleSeater);
+
+        List<DoubleSeater> mostRecentDoubleSeater = doubleSeaterService.fetchMostRecent();
+        model.addAttribute("mostRecentDoubleSeater", mostRecentDoubleSeater);
+
+        List<TripleSeater> mostRecentTripleSeater = tripleSeaterService.fetchMostRecent();
+        model.addAttribute("mostRecentTripleSeater", mostRecentTripleSeater);
+
+        List<FourSeater> mostRecentFourSeater = fourSeaterService.fetchMostRecent();
+        model.addAttribute("mostRecentFourSeater", mostRecentFourSeater);
         return "index";
     }
 

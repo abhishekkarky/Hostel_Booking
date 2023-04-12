@@ -153,14 +153,15 @@
     </div>
     <div class="room-div" th:each="double:${ds}">
         <div class="room-div-one">
-            <a th:href="@{/room/description}"><img class="room-pic" th:src="'data:image/png;base64,'+${double.imageBase64}"/></a>
+            <a th:href="@{~/room/double-seater-room-description/}+${double.id}"><img class="room-pic" th:src="'data:image/png;base64,'+${double.imageBase64}"/></a>
         </div>
         <div class="room-div-two">
-            <a class="heading-anchor" th:href="@{/room/description}"><h2 th:text="${double.name}"></h2></a>
+            <a class="heading-anchor" th:href="@{~/room/double-seater-room-description/}+${double.id}"><h2 th:text="${double.name}"></h2></a>
             <div class="for-location">
                 <i class="fa-solid fa-map-pin"></i>
                 <p th:text="${double.location}"></p>
             </div>
+            <p class="price" th:text="${double.price}"></p>
             <br>
             <div class="room-description">
                 <p th:text="${double.description}"></p>
@@ -176,7 +177,7 @@
                     <i class="fa-solid fa-star"></i>
                 </div>
             </div>
-            <a class="room-div-three-anchor" href="">Book Now</a>
+            <a class="room-div-three-anchor" th:href="@{~/room/booking-double-seater/}+${double.id}">Book Now</a>
         </div>
     </div>
 </main>

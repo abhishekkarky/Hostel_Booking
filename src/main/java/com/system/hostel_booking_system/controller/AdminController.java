@@ -66,7 +66,6 @@ public class AdminController {
     public String getAdminBookingListPage(Model model) {
         List<Booking> bookings = bookingService.fetchAll();
         model.addAttribute("booking", bookings);
-
         return "booking-list";
     }
     @GetMapping("/deleteBooking/{id}")

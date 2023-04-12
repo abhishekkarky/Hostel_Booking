@@ -52,49 +52,16 @@
                 <a class="seconda" th:href="@{/room/single-seater}">See Rooms</a>
             </div>
             <div class="secondsecond">
-                <div class="roomdiv">
+                <div class="roomdiv" th:each="recentSingle:${mostRecentSingleSeater}">
                     <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/pica.jpg}">
+                        <img class="room-pic" th:src="'data:image/png;base64,'+${recentSingle.imageBase64}">
                     </div>
                     <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
+                        <h2 th:text="${recentSingle.name}"></h2>
+                        <p th:text="${recentSingle.location}"><i class="fa-solid fa-location-dot"></i> </p>
                         <div class="description-body">
                             <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picb.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picc.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
+                                <p class="price" th:text="${recentSingle.price}"></p>
                             </div>
                             <p class="per-per">per person per month</p>
                         </div>
@@ -107,52 +74,19 @@
         <div class="second">
             <div class="secondfirst">
                 <h1>Double Seater Rooms</h1>
-                <a class="seconda" th:href="@{/room/single-seater}">See Rooms</a>
+                <a class="seconda" th:href="@{/room/double-seater}">See Rooms</a>
             </div>
             <div class="secondsecond">
-                <div class="roomdiv">
+                <div class="roomdiv" th:each="recentDouble:${mostRecentDoubleSeater}">
                     <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/pica.jpg}">
+                        <img class="room-pic" th:src="'data:image/png;base64,'+${recentDouble.imageBase64}">
                     </div>
                     <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
+                        <h2 th:text="${recentDouble.name}"></h2>
+                        <p th:text="${recentDouble.location}"><i class="fa-solid fa-location-dot"></i> </p>
                         <div class="description-body">
                             <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picb.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picc.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
+                                <p class="price" th:text="${recentDouble.price}"></p>
                             </div>
                             <p class="per-per">per person per month</p>
                         </div>
@@ -165,52 +99,19 @@
         <div class="second">
             <div class="secondfirst">
                 <h1>Triple Seater Rooms</h1>
-                <a class="seconda" th:href="@{/room/single-seater}">See Rooms</a>
+                <a class="seconda" th:href="@{/room/triple-seater}">See Rooms</a>
             </div>
             <div class="secondsecond">
-                <div class="roomdiv">
+                <div class="roomdiv" th:each="recentTriple:${mostRecentTripleSeater}">
                     <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/pica.jpg}">
+                        <img class="room-pic" th:src="'data:image/png;base64,'+${recentTriple.imageBase64}">
                     </div>
                     <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
+                        <h2 th:text="${recentTriple.name}"></h2>
+                        <p th:text="${recentTriple.location}"><i class="fa-solid fa-location-dot"></i> </p>
                         <div class="description-body">
                             <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picb.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picc.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
+                                <p class="price" th:text="${recentTriple.price}"></p>
                             </div>
                             <p class="per-per">per person per month</p>
                         </div>
@@ -223,52 +124,19 @@
         <div class="second">
             <div class="secondfirst">
                 <h1>Four Seater Rooms</h1>
-                <a class="seconda" th:href="@{/room/single-seater}">See Rooms</a>
+                <a class="seconda" th:href="@{/room/four-seater}">See Rooms</a>
             </div>
             <div class="secondsecond">
-                <div class="roomdiv">
+                <div class="roomdiv" th:each="recentFour:${mostRecentFourSeater}">
                     <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/pica.jpg}">
+                        <img class="room-pic" th:src="'data:image/png;base64,'+${recentFour.imageBase64}">
                     </div>
                     <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
+                        <h2 th:text="${recentFour.name}"></h2>
+                        <p th:text="${recentFour.location}"><i class="fa-solid fa-location-dot"></i> </p>
                         <div class="description-body">
                             <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picb.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
-                            </div>
-                            <p class="per-per">per person per month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="roomdiv">
-                    <div class="photodiv">
-                        <img class="room-pic" th:src="@{/images/picc.jpg}">
-                    </div>
-                    <div class="descriptiondiv">
-                        <h2>Canvas Hostel</h2>
-                        <p><i class="fa-solid fa-location-dot"></i> Maitidevi, Kathmandu</p>
-                        <div class="description-body">
-                            <div class="description-body-first">
-                                <p class="price">Rs. 10000</p>
-                                <p>3 Seater</p>
+                                <p class="price" th:text="${recentFour.price}"></p>
                             </div>
                             <p class="per-per">per person per month</p>
                         </div>
@@ -284,19 +152,19 @@
                 <a class="fortha" th:href="@{/blogs}">See More</a>
             </div>
             <div class="forthsecond">
-                <div class="blogs-tile" th:each="recent:${mostRecentBlogs}">
+                <div class="blogs-tile" th:each="recentBlogs:${mostRecentBlogs}">
                     <div class="blogs-tile-image-div">
-                        <img th:src="'data:image/png;base64,'+${recent.imageBase64}" alt="">
+                        <img th:src="'data:image/png;base64,'+${recentBlogs.imageBase64}" alt="">
                     </div>
                     <div class="blogs-tile-heading">
-                        <p th:text="${recent.topic}"></p>
+                        <p th:text="${recentBlogs.topic}"></p>
                     </div>
                     <div class="date-div">
                         <i class="fa-solid fa-clock"></i>
                         <p>January 30th</p>
                     </div>
                     <div class="blogs-tile-description">
-                        <p th:text="${recent.description}"></p>
+                        <p th:text="${recentBlogs.description}"></p>
                     </div>
                     <a class="blogs-tile-anchor" href="">Read More</a>
                 </div>

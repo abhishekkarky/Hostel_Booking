@@ -99,4 +99,24 @@ public class DoubleSeaterServiceImpl implements DoubleSeaterService {
     public Long countRows() {
         return doubleSeaterRepo.countAllRows();
     }
+
+    @Override
+    public List<DoubleSeater> fetchMostRecent() {
+        return listMapping(doubleSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
+    public List<DoubleSeater> listMapping(List<DoubleSeater> list) {
+        Stream<DoubleSeater> recentDouble = list.stream().map(doubleSeater ->
+                DoubleSeater.builder()
+                        .id(doubleSeater.getId())
+                        .name(doubleSeater.getName())
+                        .location(doubleSeater.getLocation())
+                        .imageBase64(getImageBase64(doubleSeater.getPhoto()))
+                        .price(doubleSeater.getPrice())
+                        .description(doubleSeater.getDescription())
+                        .build()
+        );
+        list = recentDouble.toList();
+        return list;
+    }
 }

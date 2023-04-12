@@ -98,4 +98,24 @@ public class FourSeaterServiceImpl implements FourSeaterService {
     public Long countRows() {
         return fourSeaterRepo.countAllRows();
     }
+
+    @Override
+    public List<FourSeater> fetchMostRecent() {
+        return listMapping(fourSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
+    public List<FourSeater> listMapping(List<FourSeater> list) {
+        Stream<FourSeater> recentFour = list.stream().map(fourSeater ->
+                FourSeater.builder()
+                        .id(fourSeater.getId())
+                        .name(fourSeater.getName())
+                        .location(fourSeater.getLocation())
+                        .imageBase64(getImageBase64(fourSeater.getPhoto()))
+                        .price(fourSeater.getPrice())
+                        .description(fourSeater.getDescription())
+                        .build()
+        );
+        list = recentFour.toList();
+        return list;
+    }
 }

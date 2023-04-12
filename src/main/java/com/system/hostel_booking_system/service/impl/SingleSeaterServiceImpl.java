@@ -99,4 +99,24 @@ public class SingleSeaterServiceImpl implements SingleSeaterService {
     public Long countRows() {
         return singleSeaterRepo.countAllRows();
     }
+
+    @Override
+    public List<SingleSeater> fetchMostRecent() {
+        return listMapping(singleSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
+    public List<SingleSeater> listMapping(List<SingleSeater> list) {
+        Stream<SingleSeater> recentSingle = list.stream().map(singleSeater ->
+                SingleSeater.builder()
+                        .id(singleSeater.getId())
+                        .name(singleSeater.getName())
+                        .location(singleSeater.getLocation())
+                        .imageBase64(getImageBase64(singleSeater.getPhoto()))
+                        .price(singleSeater.getPrice())
+                        .description(singleSeater.getDescription())
+                        .build()
+        );
+        list = recentSingle.toList();
+        return list;
+    }
 }

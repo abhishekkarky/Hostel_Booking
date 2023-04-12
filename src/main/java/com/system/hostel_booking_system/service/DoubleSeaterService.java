@@ -15,4 +15,6 @@ public interface DoubleSeaterService {
     DoubleSeater fetchById(Integer id);
 
     void deleteById(Integer id);
+
+    List<DoubleSeater> fetchMostRecent();
 }

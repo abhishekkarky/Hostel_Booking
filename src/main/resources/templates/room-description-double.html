@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Booking || Double Seater Room Details</title>
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/room-description.css}">
+  <link rel="stylesheet" th:href="@{/css/preloader.css}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script th:src="@{/javascript/preloader.js}" defer></script>
+</head>
+<body>
+<div class="preloader">
+  <div class="spinner"></div>
+</div>
+<header th:replace="~{/fragments/header.html}"></header>
+<br>
+<main class="room-description-main">
+  <div class="room-description-main-div">
+    <div class="room-description-main-first">
+      <div class="room-description-main-first-text">
+        <h2 th:text="${descriptionDouble.getName()}"></h2>
+        <p th:text="${descriptionDouble.getLocation()}"><i class="fa-solid fa-location-dot"></i> </p>
+      </div>
+
+      <a class="room-description-main-anchor" th:href="@{~/room/booking-double-seater/}+${descriptionDouble.id}">Book Now</a>
+    </div>
+    <div class="room-description-main-second">
+      <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionDouble.getPhoto()}" alt="">
+      <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+      <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+      <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+      <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+      <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+    </div>
+    <br>
+    <div class="room-description-main-third">
+      <div class="room-description-main-third-div">
+        <i class="fa-solid fa-check"></i>
+        <p>Parking</p>
+      </div>
+      <div class="room-description-main-third-div">
+        <i class="fa-solid fa-check"></i>
+        <p>Laundry</p>
+      </div>
+      <div class="room-description-main-third-div">
+        <i class="fa-solid fa-check"></i>
+        <p>Fooding</p>
+      </div>
+      <div class="room-description-main-third-div">
+        <i class="fa-solid fa-check"></i>
+        <p>Internet</p>
+      </div>
+    </div>
+    <br>
+    <div class="room-description-main-fourth">
+      <p th:text="${descriptionDouble.getDescription()}"></p>
+    </div>
+  </div>
+</main>
+<br>
+<footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+</html>
