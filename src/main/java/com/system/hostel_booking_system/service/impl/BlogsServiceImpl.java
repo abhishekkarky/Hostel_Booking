@@ -95,4 +95,22 @@ public class BlogsServiceImpl implements BlogsService {
     public Long countRows() {
         return blogsRepo.countAllRows();
     }
+
+    @Override
+    public List<Blogs> fetchMostRecent() {
+        return listMapping(blogsRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
+    public List<Blogs> listMapping(List<Blogs> list) {
+        Stream<Blogs> recentBlogs = list.stream().map(blogs ->
+                Blogs.builder()
+                        .id(blogs.getId())
+                        .imageBase64(getImageBase64(blogs.getPhoto()))
+                        .topic(blogs.getTopic())
+                        .description(blogs.getDescription())
+                        .build()
+        );
+        list = recentBlogs.toList();
+        return list;
+    }
 }

@@ -27,7 +27,7 @@ public class LandingController {
     private final QueryService queryService;
 
     @GetMapping("/landing")
-    public String getLandingPage(Authentication authentication) {
+    public String getLandingPage(Authentication authentication, Model model) {
         if (authentication!=null){
             Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
             for (GrantedAuthority grantedAuthority : authorities) {
@@ -36,6 +36,8 @@ public class LandingController {
                 }
             }
         }
+        List<Blogs> mostRecentBlogs = blogsService.fetchMostRecent();
+        model.addAttribute("mostRecentBlogs", mostRecentBlogs);
         return "index";
     }
 

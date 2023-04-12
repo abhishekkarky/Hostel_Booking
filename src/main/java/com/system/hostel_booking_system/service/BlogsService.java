@@ -14,4 +14,6 @@ public interface BlogsService {
     Blogs fetchById(Integer id);
 
     void deleteById(Integer id);
+
+    List<Blogs> fetchMostRecent();
 }
