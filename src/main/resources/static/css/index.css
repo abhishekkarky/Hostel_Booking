@@ -287,3 +287,11 @@ main {
         padding: 0;
     }
 }
+@media (max-width: 354px) {
+    .roomdiv {
+        width: 300px;
+    }
+    .photodiv {
+        width: 300px;
+    }
+}
