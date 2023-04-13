@@ -1,6 +1,7 @@
 package com.system.hostel_booking_system.service;
 
 import com.system.hostel_booking_system.entity.DoubleSeater;
+import com.system.hostel_booking_system.entity.SingleSeater;
 import com.system.hostel_booking_system.pojo.DoubleSeaterPojo;
 
 import java.io.IOException;
@@ -17,4 +18,7 @@ public interface DoubleSeaterService {
     void deleteById(Integer id);
 
     List<DoubleSeater> fetchMostRecent();
+
+    List<DoubleSeater> fetchAllByLocation(Integer categoryId);
+
 }

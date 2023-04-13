@@ -104,6 +104,11 @@ public class FourSeaterServiceImpl implements FourSeaterService {
         return listMapping(fourSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
     }
 
+    @Override
+    public List<FourSeater> fetchAllByLocation(Integer categoryId) {
+        return listMapping(fourSeaterRepo.findAllByLocation(categoryId).orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
     public List<FourSeater> listMapping(List<FourSeater> list) {
         Stream<FourSeater> recentFour = list.stream().map(fourSeater ->
                 FourSeater.builder()

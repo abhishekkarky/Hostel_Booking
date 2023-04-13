@@ -15,4 +15,7 @@ public interface DoubleSeaterRepo extends JpaRepository<DoubleSeater, Integer> {
 
     @Query(value = "SELECT * FROM Double_Seater order by id desc limit 3", nativeQuery = true)
     Optional<List<DoubleSeater>> findMostRecent();
+
+    @Query(value = "SELECT * FROM Double_Seater WHERE id = ?1", nativeQuery = true)
+    Optional<List<DoubleSeater>> findAllByLocation(Integer id);
 }

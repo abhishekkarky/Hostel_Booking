@@ -162,7 +162,7 @@
           <i class="fa-solid fa-map-pin"></i>
           <p th:text="${single.location}"></p>
         </div>
-        <p class="price" th:text="${single.price}"></p>
+        <p class="price" th:text="'Rs. '+${single.price}"></p>
         <br>
         <div class="room-description">
           <p th:text="${single.description}"></p>

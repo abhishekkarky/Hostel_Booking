@@ -26,7 +26,7 @@
   <div class="single-first">
     <div class="single-first-main">
       <h2>Single Seater Rooms</h2>
-      <p class="subtitle">All single seater rooms are listed here.</p>
+      <p class="subtitle" th:text="'Search Results For: '+${searchLocation}"></p>
     </div>
     <div class="single-first-image">
       <img class="single-image" th:src="@{/images/room.png}" alt="">
@@ -53,7 +53,7 @@
         <i class="fa-solid fa-map-pin"></i>
         <p th:text="${searchSingle.location}"></p>
       </div>
-      <p class="price" th:text="${searchSingle.price}"></p>
+      <p class="price" th:text="'Rs. '+${searchSingle.price}"></p>
       <br>
       <div class="room-description">
         <p th:text="${searchSingle.description}"></p>

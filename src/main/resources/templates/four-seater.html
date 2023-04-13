@@ -36,8 +36,8 @@
   <div class="single-search-div">
     <div class="single-search-box">
       <input class="search-input" type="text" placeholder="Search by location...">
-      <button class="search-icon-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
+      <button class="search-icon-button" onclick="if (document.getElementsByClassName('search-input').item(0).value!=='')
+      window.location='/room/search-four-seater/'+document.getElementsByClassName('search-input').item(0).value"><i class="fa-solid fa-magnifying-glass"></i></button>    </div>
   </div>
   <div class="room-div">
     <div class="room-div-one">
@@ -161,7 +161,7 @@
         <i class="fa-solid fa-map-pin"></i>
         <p th:text="${four.location}"></p>
       </div>
-      <p class="price" th:text="${four.price}"></p>
+      <p class="price" th:text="'Rs. '+${four.price}"></p>
       <br>
       <div class="room-description">
         <p th:text="${four.description}"></p>

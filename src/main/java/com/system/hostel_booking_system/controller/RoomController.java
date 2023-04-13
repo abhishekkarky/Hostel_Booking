@@ -167,4 +167,96 @@ public class RoomController {
         return singleSeaterService.fetchAllByLocation(categoryId);
     }
 
+    @GetMapping("/search-double-seater/{searchLocation}")
+    public String searchDoubleSeater(@PathVariable String searchLocation,Model model) {
+        model.addAttribute(searchLocation);
+
+        List<DoubleSeater> doubleSeaters = doubleSeaterService.fetchAll();
+        List<DoubleSeater> allDoubleSeaters = new ArrayList<>();
+        for (DoubleSeater value:doubleSeaters) {
+            allDoubleSeaters.addAll(getAllDoubleSeater(value.getId()));
+        }
+
+        for (int i=0; i<allDoubleSeaters.size();){
+            try {
+                if (!allDoubleSeaters.get(i).getLocation().substring(0, searchLocation.length()).toLowerCase().equalsIgnoreCase(searchLocation) && !allDoubleSeaters.get(i).getLocation().substring(0, searchLocation.length()).equalsIgnoreCase(searchLocation)) {
+                    allDoubleSeaters.remove(i);
+                } else {
+                    i++;
+                }
+            } catch (StringIndexOutOfBoundsException ex){
+                allDoubleSeaters.remove(i);
+            }
+        }
+
+        model.addAttribute("doubleSeaterList", allDoubleSeaters);
+        return "search-double-seater";
+    }
+
+    public List<DoubleSeater> getAllDoubleSeater(@PathVariable("id") Integer categoryId){
+        return doubleSeaterService.fetchAllByLocation(categoryId);
+    }
+
+    @GetMapping("/search-triple-seater/{searchLocation}")
+    public String searchTripleSeater(@PathVariable String searchLocation,Model model) {
+        model.addAttribute(searchLocation);
+
+        List<TripleSeater> tripleSeaters = tripleSeaterService.fetchAll();
+        List<TripleSeater> allTripleSeaters = new ArrayList<>();
+        for (TripleSeater value:tripleSeaters) {
+            allTripleSeaters.addAll(getAllTripleSeater(value.getId()));
+        }
+
+        for (int i=0; i<allTripleSeaters.size();){
+            try {
+                if (!allTripleSeaters.get(i).getLocation().substring(0, searchLocation.length()).toLowerCase().equalsIgnoreCase(searchLocation) && !allTripleSeaters.get(i).getLocation().substring(0, searchLocation.length()).equalsIgnoreCase(searchLocation)) {
+                    allTripleSeaters.remove(i);
+                } else {
+                    i++;
+                }
+            } catch (StringIndexOutOfBoundsException ex){
+                allTripleSeaters.remove(i);
+            }
+        }
+
+        model.addAttribute("tripleSeaterList", allTripleSeaters);
+        return "search-triple-seater";
+    }
+
+    public List<TripleSeater> getAllTripleSeater(@PathVariable("id") Integer categoryId){
+        return tripleSeaterService.fetchAllByLocation(categoryId);
+    }
+
+    @GetMapping("/search-four-seater/{searchLocation}")
+    public String searchFourSeater(@PathVariable String searchLocation,Model model) {
+        model.addAttribute(searchLocation);
+
+        List<FourSeater> fourSeaters = fourSeaterService.fetchAll();
+        List<FourSeater> getAllFourSeater = new ArrayList<>();
+        for (FourSeater value:fourSeaters) {
+            getAllFourSeater.addAll(getAllFourSeater(value.getId()));
+        }
+
+        for (int i=0; i<getAllFourSeater.size();){
+            try {
+                if (!getAllFourSeater.get(i).getLocation().substring(0, searchLocation.length()).toLowerCase().equalsIgnoreCase(searchLocation) && !getAllFourSeater.get(i).getLocation().substring(0, searchLocation.length()).equalsIgnoreCase(searchLocation)) {
+                    getAllFourSeater.remove(i);
+                } else {
+                    i++;
+                }
+            } catch (StringIndexOutOfBoundsException ex){
+                getAllFourSeater.remove(i);
+            }
+        }
+
+        model.addAttribute("fourSeaterList", getAllFourSeater);
+        return "search-four-seater";
+    }
+
+    public List<FourSeater> getAllFourSeater(@PathVariable("id") Integer categoryId){
+        return fourSeaterService.fetchAllByLocation(categoryId);
+    }
+
+
+
 }

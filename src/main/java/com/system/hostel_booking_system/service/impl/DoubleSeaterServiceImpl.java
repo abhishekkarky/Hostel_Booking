@@ -1,6 +1,7 @@
 package com.system.hostel_booking_system.service.impl;
 
 import com.system.hostel_booking_system.entity.DoubleSeater;
+import com.system.hostel_booking_system.entity.SingleSeater;
 import com.system.hostel_booking_system.pojo.DoubleSeaterPojo;
 import com.system.hostel_booking_system.repo.DoubleSeaterRepo;
 import com.system.hostel_booking_system.service.DoubleSeaterService;
@@ -103,6 +104,11 @@ public class DoubleSeaterServiceImpl implements DoubleSeaterService {
     @Override
     public List<DoubleSeater> fetchMostRecent() {
         return listMapping(doubleSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
+    @Override
+    public List<DoubleSeater> fetchAllByLocation(Integer categoryId) {
+        return listMapping(doubleSeaterRepo.findAllByLocation(categoryId).orElseThrow(()->new RuntimeException("Not Found")));
     }
 
     public List<DoubleSeater> listMapping(List<DoubleSeater> list) {

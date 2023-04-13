@@ -2,6 +2,7 @@ package com.system.hostel_booking_system.repo;
 
 import com.system.hostel_booking_system.entity.Blogs;
 import com.system.hostel_booking_system.entity.FourSeater;
+import com.system.hostel_booking_system.entity.SingleSeater;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,7 @@ public interface FourSeaterRepo extends JpaRepository<FourSeater, Integer> {
 
     @Query(value = "SELECT * FROM Four_Seater order by id desc limit 3", nativeQuery = true)
     Optional<List<FourSeater>> findMostRecent();
+
+    @Query(value = "SELECT * FROM Four_Seater WHERE id = ?1", nativeQuery = true)
+    Optional<List<FourSeater>> findAllByLocation(Integer id);
 }

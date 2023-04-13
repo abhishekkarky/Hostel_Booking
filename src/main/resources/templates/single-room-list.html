@@ -78,7 +78,7 @@
             <td><img th:src="'data:image/png;base64,'+${single.imageBase64}" width="100" height="100"/></td>
             <td th:text="${single.name}"></td>
             <td th:text="${single.location}"></td>
-            <td th:text="${single.price}"></td>
+            <td th:text="'Rs. '+${single.price}"></td>
             <td th:text="${single.description}"></td>
             <td><a class="delete-button" th:href="@{~/192.168.1.1.1/editSingleSeater/}+${single.id}">Edit</a> <a class="delete-button" th:href="@{~/192.168.1.1.1/deleteSingleSeater/}+${single.id}">Delete</a></td>
           </tr>
