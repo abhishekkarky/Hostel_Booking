@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="room-div" th:if="${fourSeaterList.isEmpty()}">
-        <h2>Not Found!!!</h2>
+        <h2 th:text="'Sorry! But We could not find any hostel in '+${searchLocation}"></h2>
     </div>
     <div class="room-div" th:each="searchFour:${fourSeaterList}">
         <div class="room-div-one">
