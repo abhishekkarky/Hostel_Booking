@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -133,6 +135,36 @@ public class RoomController {
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         bookingService.save(bookingPojo);
         return "redirect:/landing";
+    }
+
+    @GetMapping("/search-single-seater/{searchLocation}")
+    public String searchSingleSeater(@PathVariable String searchLocation,Model model) {
+        model.addAttribute(searchLocation);
+
+        List<SingleSeater> singleSeaters = singleSeaterService.fetchAll();
+        List<SingleSeater> allSingleSeaters = new ArrayList<>();
+        for (SingleSeater value:singleSeaters) {
+            allSingleSeaters.addAll(getAllSingleSeater(value.getId()));
+        }
+
+        for (int i=0; i<allSingleSeaters.size();){
+            try {
+                if (!allSingleSeaters.get(i).getLocation().substring(0, searchLocation.length()).toLowerCase().equalsIgnoreCase(searchLocation) && !allSingleSeaters.get(i).getLocation().substring(0, searchLocation.length()).equalsIgnoreCase(searchLocation)) {
+                    allSingleSeaters.remove(i);
+                } else {
+                    i++;
+                }
+            } catch (StringIndexOutOfBoundsException ex){
+                allSingleSeaters.remove(i);
+            }
+        }
+
+        model.addAttribute("singleSeaterList", allSingleSeaters);
+        return "search-single-seater";
+    }
+
+    public List<SingleSeater> getAllSingleSeater(@PathVariable("id") Integer categoryId){
+        return singleSeaterService.fetchAllByLocation(categoryId);
     }
 
 }

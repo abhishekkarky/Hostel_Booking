@@ -105,6 +105,11 @@ public class SingleSeaterServiceImpl implements SingleSeaterService {
         return listMapping(singleSeaterRepo.findMostRecent().orElseThrow(()->new RuntimeException("Not Found")));
     }
 
+    @Override
+    public List<SingleSeater> fetchAllByLocation(Integer categoryId) {
+        return listMapping(singleSeaterRepo.findAllByLocation(categoryId).orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
     public List<SingleSeater> listMapping(List<SingleSeater> list) {
         Stream<SingleSeater> recentSingle = list.stream().map(singleSeater ->
                 SingleSeater.builder()

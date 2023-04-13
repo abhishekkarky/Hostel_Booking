@@ -16,4 +16,6 @@ public interface SingleSeaterRepo extends JpaRepository<SingleSeater, Integer> {
 
     @Query(value = "SELECT * FROM Single_Seater order by id desc limit 3", nativeQuery = true)
     Optional<List<SingleSeater>> findMostRecent();
+    @Query(value = "SELECT * FROM Single_Seater WHERE id = ?1", nativeQuery = true)
+    Optional<List<SingleSeater>> findAllByLocation(Integer id);
 }

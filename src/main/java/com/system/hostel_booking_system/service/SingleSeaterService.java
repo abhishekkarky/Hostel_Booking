@@ -16,4 +16,6 @@ public interface SingleSeaterService {
     void deleteById(Integer id);
 
     List<SingleSeater> fetchMostRecent();
+
+    List<SingleSeater> fetchAllByLocation(Integer categoryId);
 }
