@@ -1,6 +1,5 @@
 package com.system.hostel_booking_system.repo;
 
-import com.system.hostel_booking_system.entity.Blogs;
 import com.system.hostel_booking_system.entity.SingleSeater;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

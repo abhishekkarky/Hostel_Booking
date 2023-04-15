@@ -5,7 +5,6 @@ import com.system.hostel_booking_system.pojo.QueriesPojo;
 import com.system.hostel_booking_system.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;

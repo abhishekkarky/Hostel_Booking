@@ -1,7 +1,6 @@
 package com.system.hostel_booking_system.pojo;
 
 import com.system.hostel_booking_system.entity.Blogs;
-import com.system.hostel_booking_system.entity.DoubleSeater;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;

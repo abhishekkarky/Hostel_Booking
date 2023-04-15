@@ -1,7 +1,6 @@
 package com.system.hostel_booking_system.service.impl;
 
 import com.system.hostel_booking_system.entity.DoubleSeater;
-import com.system.hostel_booking_system.entity.SingleSeater;
 import com.system.hostel_booking_system.pojo.DoubleSeaterPojo;
 import com.system.hostel_booking_system.repo.DoubleSeaterRepo;
 import com.system.hostel_booking_system.service.DoubleSeaterService;

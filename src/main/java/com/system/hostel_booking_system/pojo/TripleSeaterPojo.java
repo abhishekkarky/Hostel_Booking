@@ -1,6 +1,5 @@
 package com.system.hostel_booking_system.pojo;
 
-import com.system.hostel_booking_system.entity.DoubleSeater;
 import com.system.hostel_booking_system.entity.TripleSeater;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
