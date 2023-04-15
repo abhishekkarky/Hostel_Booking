@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Booking || Single Seater Room</title>
+    <title>Hostel Booking || Double Seater Room</title>
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <link rel="stylesheet" th:href="@{/css/single-seater.css}">
@@ -34,6 +34,7 @@
     </div>
     <br>
     <div class="single-search-div">
+        <a class="sort-anchor" th:href="@{/room/sort-double-seater}">Sort by Price <i class="fa-solid fa-sort"></i> </a>
         <div class="single-search-box">
             <input class="search-input" type="text" placeholder="Search by location...">
             <button class="search-icon-button" onclick="if (document.getElementsByClassName('search-input').item(0).value!=='')

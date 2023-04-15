@@ -111,6 +111,11 @@ public class DoubleSeaterServiceImpl implements DoubleSeaterService {
         return listMapping(doubleSeaterRepo.findAllByLocation(categoryId).orElseThrow(()->new RuntimeException("Not Found")));
     }
 
+    @Override
+    public List<DoubleSeater> fetchAllBySortedPrice() {
+        return listMapping(doubleSeaterRepo.findAllBySortedPrice().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
     public List<DoubleSeater> listMapping(List<DoubleSeater> list) {
         Stream<DoubleSeater> recentDouble = list.stream().map(doubleSeater ->
                 DoubleSeater.builder()

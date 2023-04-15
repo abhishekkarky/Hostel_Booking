@@ -1,6 +1,7 @@
 package com.system.hostel_booking_system.repo;
 
 import com.system.hostel_booking_system.entity.Blogs;
+import com.system.hostel_booking_system.entity.DoubleSeater;
 import com.system.hostel_booking_system.entity.SingleSeater;
 import com.system.hostel_booking_system.entity.TripleSeater;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,4 +21,7 @@ public interface TripleSeaterRepo extends JpaRepository<TripleSeater, Integer> {
 
     @Query(value = "SELECT * FROM Triple_Seater WHERE id = ?1", nativeQuery = true)
     Optional<List<TripleSeater>> findAllByLocation(Integer id);
+
+    @Query(value = "SELECT * FROM Triple_Seater ORDER BY hostel_price ASC", nativeQuery = true)
+    Optional<List<TripleSeater>> findAllBySortedPrice();
 }

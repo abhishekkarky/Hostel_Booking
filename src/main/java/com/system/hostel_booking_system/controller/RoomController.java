@@ -167,6 +167,17 @@ public class RoomController {
         return singleSeaterService.fetchAllByLocation(categoryId);
     }
 
+    @GetMapping("/sort-single-seater")
+    public String sortSingleSeater(Model model) {
+        List<SingleSeater> singleSeaters = getAllSortedSingleSeater();
+        model.addAttribute("sortedSingle", singleSeaters);
+        return "sort-single-seater";
+    }
+
+    public List<SingleSeater> getAllSortedSingleSeater() {
+        return  singleSeaterService.fetchAllBySortedPrice();
+    }
+
     @GetMapping("/search-double-seater/{searchLocation}")
     public String searchDoubleSeater(@PathVariable String searchLocation,Model model) {
         model.addAttribute(searchLocation);
@@ -195,6 +206,17 @@ public class RoomController {
 
     public List<DoubleSeater> getAllDoubleSeater(@PathVariable("id") Integer categoryId){
         return doubleSeaterService.fetchAllByLocation(categoryId);
+    }
+
+    @GetMapping("/sort-double-seater")
+    public String sortDoubleSeater(Model model) {
+        List<DoubleSeater> doubleSeaters = getAllSortedDoubleSeater();
+        model.addAttribute("sortedDouble", doubleSeaters);
+        return "sort-double-seater";
+    }
+
+    public List<DoubleSeater> getAllSortedDoubleSeater() {
+        return  doubleSeaterService.fetchAllBySortedPrice();
     }
 
     @GetMapping("/search-triple-seater/{searchLocation}")
@@ -227,6 +249,17 @@ public class RoomController {
         return tripleSeaterService.fetchAllByLocation(categoryId);
     }
 
+    @GetMapping("/sort-triple-seater")
+    public String sortTripleSeater(Model model) {
+        List<TripleSeater> tripleSeaters = getAllSortedTripleSeater();
+        model.addAttribute("sortedTriple", tripleSeaters);
+        return "sort-triple-seater";
+    }
+
+    public List<TripleSeater> getAllSortedTripleSeater() {
+        return  tripleSeaterService.fetchAllBySortedPrice();
+    }
+
     @GetMapping("/search-four-seater/{searchLocation}")
     public String searchFourSeater(@PathVariable String searchLocation,Model model) {
         model.addAttribute(searchLocation);
@@ -255,6 +288,17 @@ public class RoomController {
 
     public List<FourSeater> getAllFourSeater(@PathVariable("id") Integer categoryId){
         return fourSeaterService.fetchAllByLocation(categoryId);
+    }
+
+    @GetMapping("/sort-four-seater")
+    public String sortFourSeater(Model model) {
+        List<FourSeater> fourSeaters = getAllSortedFourSeater();
+        model.addAttribute("sortedFour", fourSeaters);
+        return "sort-four-seater";
+    }
+
+    public List<FourSeater> getAllSortedFourSeater() {
+        return  fourSeaterService.fetchAllBySortedPrice();
     }
 
 

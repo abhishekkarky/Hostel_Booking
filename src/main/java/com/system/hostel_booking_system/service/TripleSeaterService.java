@@ -1,6 +1,5 @@
 package com.system.hostel_booking_system.service;
 
-import com.system.hostel_booking_system.entity.SingleSeater;
 import com.system.hostel_booking_system.entity.TripleSeater;
 import com.system.hostel_booking_system.pojo.TripleSeaterPojo;
 
@@ -20,4 +19,5 @@ public interface TripleSeaterService {
 
     List<TripleSeater> fetchAllByLocation(Integer categoryId);
 
+    List<TripleSeater> fetchAllBySortedPrice();
 }

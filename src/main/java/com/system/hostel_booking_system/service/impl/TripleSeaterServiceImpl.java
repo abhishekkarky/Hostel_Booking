@@ -110,6 +110,11 @@ public class TripleSeaterServiceImpl implements TripleSeaterService {
         return listMapping(tripleSeaterRepo.findAllByLocation(categoryId).orElseThrow(()->new RuntimeException("Not Found")));
     }
 
+    @Override
+    public List<TripleSeater> fetchAllBySortedPrice() {
+        return listMapping(tripleSeaterRepo.findAllBySortedPrice().orElseThrow(()->new RuntimeException("Not Found")));
+    }
+
     public List<TripleSeater> listMapping(List<TripleSeater> list) {
         Stream<TripleSeater> recentTriple = list.stream().map(tripleSeater ->
                 TripleSeater.builder()

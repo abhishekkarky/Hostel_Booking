@@ -18,4 +18,6 @@ public interface SingleSeaterService {
     List<SingleSeater> fetchMostRecent();
 
     List<SingleSeater> fetchAllByLocation(Integer categoryId);
+
+    List<SingleSeater> fetchAllBySortedPrice();
 }

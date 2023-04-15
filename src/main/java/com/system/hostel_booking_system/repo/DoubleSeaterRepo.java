@@ -18,4 +18,7 @@ public interface DoubleSeaterRepo extends JpaRepository<DoubleSeater, Integer> {
 
     @Query(value = "SELECT * FROM Double_Seater WHERE id = ?1", nativeQuery = true)
     Optional<List<DoubleSeater>> findAllByLocation(Integer id);
+
+    @Query(value = "SELECT * FROM Double_Seater ORDER BY hostel_price ASC", nativeQuery = true)
+    Optional<List<DoubleSeater>> findAllBySortedPrice();
 }

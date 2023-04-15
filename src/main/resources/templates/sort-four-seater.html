@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Booking || Four Seater Room</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/single-seater.css}">
+    <link rel="stylesheet" th:href="@{/css/preloader.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/javascript/preloader.js}" defer></script>
+</head>
+<body>
+<div class="preloader">
+    <div class="spinner"></div>
+</div>
+<header th:replace="~{/fragments/header.html}"></header>
+<main class="single-main-wrap">
+    <div class="single-first">
+        <div class="single-first-main">
+            <h2>Four Seater Rooms</h2>
+            <p class="subtitle">Sorted List of Four Seater Rooms from Price low to high</p>
+        </div>
+        <div class="single-first-image">
+            <img class="single-image" th:src="@{/images/room.png}" alt="">
+        </div>
+    </div>
+    <br>
+    <div class="single-search-div">
+        <a class="sort-anchor" th:href="@{/room/sort-four-seater}">Sort by Price <i class="fa-solid fa-sort"></i> </a>
+        <div class="single-search-box">
+            <input class="search-input" type="text" placeholder="Search by location...">
+            <button class="search-icon-button" onclick="if (document.getElementsByClassName('search-input').item(0).value!=='')
+      window.location='/room/search-four-seater/'+document.getElementsByClassName('search-input').item(0).value"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+    <div class="room-div" th:each="sortFour:${sortedFour}">
+        <div class="room-div-one">
+            <a th:href="@{~/room/four-seater-room-description/}+${sortFour.id}"><img class="room-pic" th:src="'data:image/png;base64,'+${sortFour.imageBase64}"/></a>
+        </div>
+        <div class="room-div-two">
+            <a class="heading-anchor" th:href="@{~/room/four-seater-room-description/}+${sortFour.id}"><h2 th:text="${sortFour.name}"></h2></a>
+            <div class="for-location">
+                <i class="fa-solid fa-map-pin"></i>
+                <p th:text="${sortFour.location}"></p>
+            </div>
+            <p class="price" th:text="'Rs. '+${sortFour.price}"></p>
+            <br>
+            <div class="room-description">
+                <p th:text="${sortFour.description}"></p>
+            </div>
+        </div>
+        <div class="room-div-three">
+            <div class="rating-div">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <a class="room-div-three-anchor" th:href="@{~/room/booking-four-seater/}+${sortFour.id}">Book Now</a>
+        </div>
+    </div>
+</main>
+<footer th:replace="~{/fragments/footer.html}"></footer>
+</body>
+<script>
+    let myPage = "four-seater";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i => {
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
+</html>
