@@ -81,7 +81,7 @@ html {
     justify-content: center;
     align-items: center;
     width: 270px;
-    height: 380px;
+    height: 420px;
     border-radius: 12px;
     margin-top: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -103,7 +103,7 @@ html {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 10vh;
+    height: 15vh;
 }
 .teams-description-p {
     display: flex;
