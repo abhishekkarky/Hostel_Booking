@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Collection;
 import java.util.List;
@@ -60,13 +61,14 @@ public class LandingController {
         return "contact";
     }
     @PostMapping("/saveQueries")
-    public String saveContact(@Valid QueriesPojo queriesPojo) {
+    public String saveContact(@Valid QueriesPojo queriesPojo, RedirectAttributes redirectAttributes) {
 //        SimpleMailMessage message = new SimpleMailMessage();
 //        message.setTo(queriesPojo.getEmail());
 //        message.setSubject("Hostellers Nepal");
 //        message.setText("Hello there pretty stranger!!! Thank you for contacting us. We will contact you back ASAP.");
 //        getJavaMailSender.send(message);
         queryService.save(queriesPojo);
+        redirectAttributes.addFlashAttribute("message", "Thank you for contacting us!!!");
         return "redirect:/landing";
     }
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.List;
@@ -182,8 +183,9 @@ public class AdminController {
         return "add-single-seater-room";
     }
     @PostMapping("/save/single-seater-room")
-    public String saveSingleSeaterRoom(@Valid SingleSeaterPojo singleSeaterPojo) throws IOException {
+    public String saveSingleSeaterRoom(@Valid SingleSeaterPojo singleSeaterPojo, RedirectAttributes redirectAttributes) throws IOException {
         singleSeaterService.save(singleSeaterPojo);
+        redirectAttributes.addFlashAttribute("message", "Room saved successfully!");
         return "redirect:/192.168.1.1.1";
     }
 
@@ -193,8 +195,9 @@ public class AdminController {
         return "add-double-seater-room";
     }
     @PostMapping("/save/double-seater-room")
-    public String saveDoubleSeaterRoom(@Valid DoubleSeaterPojo doubleSeaterPojo) throws IOException {
+    public String saveDoubleSeaterRoom(@Valid DoubleSeaterPojo doubleSeaterPojo, RedirectAttributes redirectAttributes) throws IOException {
         doubleSeaterService.save(doubleSeaterPojo);
+        redirectAttributes.addFlashAttribute("message", "Room saved successfully!");
         return "redirect:/192.168.1.1.1";
     }
 
@@ -204,8 +207,9 @@ public class AdminController {
         return "add-triple-seater-room";
     }
     @PostMapping("/save/triple-seater-room")
-    public String saveTripleSeaterRoom(@Valid TripleSeaterPojo tripleSeaterPojo) throws IOException {
+    public String saveTripleSeaterRoom(@Valid TripleSeaterPojo tripleSeaterPojo, RedirectAttributes redirectAttributes) throws IOException {
         tripleSeaterService.save(tripleSeaterPojo);
+        redirectAttributes.addFlashAttribute("message", "Room saved successfully!");
         return "redirect:/192.168.1.1.1";
     }
 
@@ -215,8 +219,9 @@ public class AdminController {
         return "add-four-seater-room";
     }
     @PostMapping("/save/four-seater-room")
-    public String saveFourSeaterRoom(@Valid FourSeaterPojo fourSeaterPojo) throws IOException {
+    public String saveFourSeaterRoom(@Valid FourSeaterPojo fourSeaterPojo,RedirectAttributes redirectAttributes) throws IOException {
         fourSeaterService.save(fourSeaterPojo);
+        redirectAttributes.addFlashAttribute("message", "Room saved successfully!");
         return "redirect:/192.168.1.1.1";
     }
 
@@ -226,8 +231,9 @@ public class AdminController {
         return "add-blog";
     }
     @PostMapping("/save/blogs")
-    public String saveBlogs(@Valid BlogsPojo blogsPojo) throws IOException {
+    public String saveBlogs(@Valid BlogsPojo blogsPojo, RedirectAttributes redirectAttributes) throws IOException {
         blogsService.save(blogsPojo);
+        redirectAttributes.addFlashAttribute("message", "Blog saved successfully!");
         return "redirect:/192.168.1.1.1";
     }
 }

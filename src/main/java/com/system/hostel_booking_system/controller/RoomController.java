@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,26 +114,30 @@ public class RoomController {
     }
 
     @PostMapping("/saveBookingSingle")
-    public String saveBookingSingle(@Valid BookingPojo bookingPojo) {
+    public String saveBookingSingle(@Valid BookingPojo bookingPojo, RedirectAttributes redirectAttributes) {
         bookingService.save(bookingPojo);
+        redirectAttributes.addFlashAttribute("message", "Successfully booked!!!");
         return "redirect:/landing";
     }
 
     @PostMapping("/saveBookingDouble")
-    public String saveBookingDouble(@Valid BookingPojo bookingPojo) {
+    public String saveBookingDouble(@Valid BookingPojo bookingPojo, RedirectAttributes redirectAttributes) {
         bookingService.save(bookingPojo);
+        redirectAttributes.addFlashAttribute("message", "Successfully booked!!!");
         return "redirect:/landing";
     }
 
     @PostMapping("/saveBookingTriple")
-    public String saveBookingTriple(@Valid BookingPojo bookingPojo) {
+    public String saveBookingTriple(@Valid BookingPojo bookingPojo, RedirectAttributes redirectAttributes) {
         bookingService.save(bookingPojo);
+        redirectAttributes.addFlashAttribute("message", "Successfully booked!!!");
         return "redirect:/landing";
     }
 
     @PostMapping("/saveBookingFour")
-    public String saveBooking(@Valid BookingPojo bookingPojo) {
+    public String saveBooking(@Valid BookingPojo bookingPojo, RedirectAttributes redirectAttributes) {
         bookingService.save(bookingPojo);
+        redirectAttributes.addFlashAttribute("message", "Successfully booked!!!");
         return "redirect:/landing";
     }
 

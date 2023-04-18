@@ -26,12 +26,12 @@ public class AdminLoginController {
         }
         return "redirect:/192.168.1.1.1";
     }
-    @PostMapping("/logout")
+    @GetMapping("/logout")
     public String logout(Authentication authentication, Model model) {
         if (authentication.isAuthenticated()) {
             SecurityContextHolder.clearContext();
         }
         model.addAttribute("message", "Logged Out Successfully!!!");
-        return "redirect:/192.168.0.1.1";
+        return "/admin-login";
     }
 }
