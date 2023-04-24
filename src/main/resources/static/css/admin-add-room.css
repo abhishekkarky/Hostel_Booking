@@ -25,6 +25,13 @@ input {
     border-radius: 6px;
     font-size: 15px;
 }
+textarea {
+    width: 350px;
+    height: 80px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+}
 button {
     width: 200px;
     height: 40px;

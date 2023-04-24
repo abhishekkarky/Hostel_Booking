@@ -44,7 +44,7 @@
         <i class="fa-solid fa-plus"></i> <a th:href="@{/192.168.1.1.1/add-double-seater-room}">Add Double Seater</a>
       </li>
       <li class="sidebar-list-item">
-        <i class="fa-solid fa-plus"></i> <a th:href="@{@{/192.168.1.1.1/add-triple-seater-room}}">Add Triple Seater</a>
+        <i class="fa-solid fa-plus"></i> <a th:href="@{/192.168.1.1.1/add-triple-seater-room}">Add Triple Seater</a>
       </li>
       <li class="sidebar-list-item">
         <i class="fa-solid fa-plus"></i> <a th:href="@{/192.168.1.1.1/add-four-seater-room}">Add Four Seater</a>
@@ -66,7 +66,7 @@
         <input type="text" name="name" id="name" placeholder="Enter the Hostel's name..." required  th:field="*{name}" th:value="${ts.getName()}">
         <input type="text" name="location" id="location" placeholder="Enter the Hostel's Location..." required th:field="*{location}" th:value="${ts.getLocation()}">
         <input type="text" name="price" id="price" placeholder="Enter the Hostel's price..." required th:field="*{price}" th:value="${ts.getPrice()}">
-        <input type="text" name="description" id="description" placeholder="Enter the Hostel's Description..." required th:field="*{description}" th:value="${ts.getDescription()}">
+        <textarea type="text" name="description" id="description" placeholder="Enter the Hostel's Description..." required th:field="*{description}" th:value="${ts.getDescription()}"></textarea>
         <button type="submit">Add Hostel</button>
       </div>
     </form>
