@@ -93,7 +93,7 @@ html {
 .blogs-tile-heading p {
     font-size: 1.125rem;
 }
-.fa-solid {
+.date-div .fa-solid {
     font-size: 0.75rem;
     color: #6b7985;
 }
@@ -141,4 +141,15 @@ html {
 }
 .blogs-tile-anchor:hover {
     opacity: 0.8;
+}
+@media (max-width: 765px) {
+    .blogs-main-head-left {
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 15px;
+        width: 100%;
+    }
+    .blogs-main-head-right {
+        display: none;
+    }
 }
