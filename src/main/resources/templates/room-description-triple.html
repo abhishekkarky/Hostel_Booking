@@ -66,4 +66,13 @@
 <br>
 <footer th:replace="~{/fragments/footer.html}"></footer>
 </body>
+<script>
+    let myPage = "triple-seater";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i => {
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
 </html>
