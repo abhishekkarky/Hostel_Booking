@@ -2,8 +2,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 30px;
-    height: 80vh;
+    height: 100vh;
     justify-content: flex-start;
     align-items: center;
 }
@@ -12,9 +11,8 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
     width: 500px;
-    height: 60vh;
+    height: 90vh;
     border: 1px solid whitesmoke;
     border-radius: 20px;
 }

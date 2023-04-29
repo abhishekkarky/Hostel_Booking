@@ -20,4 +20,6 @@ public interface SingleSeaterService {
     List<SingleSeater> fetchAllByLocation(Integer categoryId);
 
     List<SingleSeater> fetchAllBySortedPrice();
+
+    SingleSeater findById(Integer id);
 }

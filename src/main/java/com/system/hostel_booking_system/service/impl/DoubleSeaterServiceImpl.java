@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 @Service
@@ -38,14 +39,59 @@ public class DoubleSeaterServiceImpl implements DoubleSeaterService {
         doubleSeater.setLocation(doubleSeaterPojo.getLocation());
         doubleSeater.setPrice(doubleSeaterPojo.getPrice());
         doubleSeater.setDescription(doubleSeaterPojo.getDescription());
-        if(doubleSeaterPojo.getPhoto()!=null){
+
+        if(!Objects.equals(doubleSeaterPojo.getPhoto().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, doubleSeaterPojo.getPhoto().getOriginalFilename());
             fileNames.append(doubleSeaterPojo.getPhoto().getOriginalFilename());
             Files.write(fileNameAndPath, doubleSeaterPojo.getPhoto().getBytes());
-
             doubleSeater.setPhoto(doubleSeaterPojo.getPhoto().getOriginalFilename());
+        }
+
+        if(doubleSeaterPojo.getPhoto2()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, doubleSeaterPojo.getPhoto2().getOriginalFilename());
+            fileNames.append(doubleSeaterPojo.getPhoto2().getOriginalFilename());
+            Files.write(fileNameAndPath, doubleSeaterPojo.getPhoto2().getBytes());
+            doubleSeater.setPhoto2(doubleSeaterPojo.getPhoto2().getOriginalFilename());
+        }
+
+        if(doubleSeaterPojo.getPhoto3()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, doubleSeaterPojo.getPhoto3().getOriginalFilename());
+            fileNames.append(doubleSeaterPojo.getPhoto3().getOriginalFilename());
+            Files.write(fileNameAndPath, doubleSeaterPojo.getPhoto3().getBytes());
+            doubleSeater.setPhoto3(doubleSeaterPojo.getPhoto3().getOriginalFilename());
+        }
+
+        if(doubleSeaterPojo.getPhoto4()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, doubleSeaterPojo.getPhoto4().getOriginalFilename());
+            fileNames.append(doubleSeaterPojo.getPhoto4().getOriginalFilename());
+            Files.write(fileNameAndPath, doubleSeaterPojo.getPhoto4().getBytes());
+            doubleSeater.setPhoto4(doubleSeaterPojo.getPhoto4().getOriginalFilename());
+        }
+
+        if(doubleSeaterPojo.getPhoto5()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, doubleSeaterPojo.getPhoto5().getOriginalFilename());
+            fileNames.append(doubleSeaterPojo.getPhoto5().getOriginalFilename());
+            Files.write(fileNameAndPath, doubleSeaterPojo.getPhoto5().getBytes());
+            doubleSeater.setPhoto5(doubleSeaterPojo.getPhoto5().getOriginalFilename());
+        }
+
+        if(doubleSeaterPojo.getPhoto6()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, doubleSeaterPojo.getPhoto6().getOriginalFilename());
+            fileNames.append(doubleSeaterPojo.getPhoto6().getOriginalFilename());
+            Files.write(fileNameAndPath, doubleSeaterPojo.getPhoto6().getBytes());
+            doubleSeater.setPhoto6(doubleSeaterPojo.getPhoto6().getOriginalFilename());
         }
 
         doubleSeaterRepo.save(doubleSeater);
@@ -128,5 +174,23 @@ public class DoubleSeaterServiceImpl implements DoubleSeaterService {
         );
         list = recentDouble.toList();
         return list;
+    }
+
+    @Override
+    public DoubleSeater findById(Integer id) {
+        DoubleSeater doubleSeater=doubleSeaterRepo.findById(id).orElseThrow(()-> new RuntimeException("not found"));
+        doubleSeater=DoubleSeater.builder()
+                .id(doubleSeater.getId())
+                .name(doubleSeater.getName())
+                .location(doubleSeater.getLocation())
+                .imageBase64(getImageBase64(doubleSeater.getPhoto()))
+                .image2Base64(getImageBase64(doubleSeater.getPhoto2()))
+                .image3Base64(getImageBase64(doubleSeater.getPhoto3()))
+                .image4Base64(getImageBase64(doubleSeater.getPhoto4()))
+                .image5Base64(getImageBase64(doubleSeater.getPhoto5()))
+                .image6Base64(getImageBase64(doubleSeater.getPhoto6()))
+                .description(doubleSeater.getDescription())
+                .build();
+        return doubleSeater;
     }
 }

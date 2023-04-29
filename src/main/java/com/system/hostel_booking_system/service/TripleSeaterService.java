@@ -20,4 +20,7 @@ public interface TripleSeaterService {
     List<TripleSeater> fetchAllByLocation(Integer categoryId);
 
     List<TripleSeater> fetchAllBySortedPrice();
+
+    TripleSeater findById(Integer id);
+
 }

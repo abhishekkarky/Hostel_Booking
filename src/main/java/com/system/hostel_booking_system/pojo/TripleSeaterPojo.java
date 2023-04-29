@@ -1,6 +1,7 @@
 package com.system.hostel_booking_system.pojo;
 
 import com.system.hostel_booking_system.entity.TripleSeater;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,6 +16,11 @@ public class TripleSeaterPojo {
     private Integer id;
 
     private MultipartFile photo;
+    private MultipartFile photo2;
+    private MultipartFile photo3;
+    private MultipartFile photo4;
+    private MultipartFile photo5;
+    private MultipartFile photo6;
 
     @NotEmpty(message = "Hostel's name can't be empty")
     private String name;

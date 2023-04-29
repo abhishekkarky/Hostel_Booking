@@ -59,29 +59,34 @@ public class RoomController {
 
     @GetMapping("/single-seater-room-description/{id}")
         public String getRoomDescriptionSingle(@PathVariable("id") Integer id, Model model) {
-        SingleSeater singleSeaters = singleSeaterService.fetchById(id);
+        SingleSeater singleSeaters = singleSeaterService.findById(id);
         model.addAttribute("descriptionSingle", new SingleSeaterPojo(singleSeaters));
+        model.addAttribute("descriptionSingle",singleSeaters);
         return "room-description-single";
     }
 
     @GetMapping("/double-seater-room-description/{id}")
     public String getRoomDescriptionDouble(@PathVariable("id") Integer id, Model model) {
-        DoubleSeater doubleSeaters = doubleSeaterService.fetchById(id);
+        DoubleSeater doubleSeaters = doubleSeaterService.findById(id);
         model.addAttribute("descriptionDouble", new DoubleSeaterPojo(doubleSeaters));
+        model.addAttribute("descriptionDouble",doubleSeaters);
         return "room-description-double";
     }
 
     @GetMapping("/triple-seater-room-description/{id}")
     public String getRoomDescriptionTriple(@PathVariable("id") Integer id, Model model) {
-        TripleSeater tripleSeaters = tripleSeaterService.fetchById(id);
+        TripleSeater tripleSeaters = tripleSeaterService.findById(id);
         model.addAttribute("descriptionTriple", new TripleSeaterPojo(tripleSeaters));
+        model.addAttribute("descriptionTriple",tripleSeaters);
+
         return "room-description-triple";
     }
 
     @GetMapping("/four-seater-room-description/{id}")
     public String getRoomDescriptionFour(@PathVariable("id") Integer id, Model model) {
-        FourSeater fourSeaters = fourSeaterService.fetchById(id);
+        FourSeater fourSeaters = fourSeaterService.findById(id);
         model.addAttribute("descriptionFour", new FourSeaterPojo(fourSeaters));
+        model.addAttribute("descriptionFour",fourSeaters);
         return "room-description-four";
     }
 

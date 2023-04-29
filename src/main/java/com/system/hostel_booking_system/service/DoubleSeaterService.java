@@ -22,4 +22,5 @@ public interface DoubleSeaterService {
 
     List<DoubleSeater> fetchAllBySortedPrice();
 
+    DoubleSeater findById(Integer id);
 }

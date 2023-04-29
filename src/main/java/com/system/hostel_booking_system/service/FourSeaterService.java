@@ -20,4 +20,6 @@ public interface FourSeaterService {
     List<FourSeater> fetchAllByLocation(Integer categoryId);
 
     List<FourSeater> fetchAllBySortedPrice();
+
+    FourSeater findById(Integer id);
 }

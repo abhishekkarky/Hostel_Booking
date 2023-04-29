@@ -95,3 +95,6 @@ html {
     padding-top: 20px;
     padding: 10px;
 }
+.room-description-main-fourth p {
+    font-size: 1.18rem;
+}

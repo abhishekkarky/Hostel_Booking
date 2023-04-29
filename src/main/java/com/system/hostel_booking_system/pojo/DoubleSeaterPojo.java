@@ -15,6 +15,11 @@ public class DoubleSeaterPojo {
     private Integer id;
 
     private MultipartFile photo;
+    private MultipartFile photo2;
+    private MultipartFile photo3;
+    private MultipartFile photo4;
+    private MultipartFile photo5;
+    private MultipartFile photo6;
 
     @NotEmpty(message = "Hostel's name can't be empty")
     private String name;

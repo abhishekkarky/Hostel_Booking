@@ -63,6 +63,11 @@
       <div class="form-fields">
         <input type="number" hidden="hidden" name="id" th:field="*{id}" th:value="${fs.id}">
         <input type="file" name="photo" accept="image/*" id="photo" class="form-control-file" required th:value="${fs.getPhoto()}">
+        <input type="file" accept="image/*" id="photo2" class="form-control-file" required name="photo2" multiple>
+        <input type="file" accept="image/*" id="photo3" class="form-control-file" required name="photo3" multiple>
+        <input type="file" accept="image/*" id="photo4" class="form-control-file" required name="photo4" multiple>
+        <input type="file" accept="image/*" id="photo5" class="form-control-file" required name="photo5" multiple>
+        <input type="file" accept="image/*" id="photo6" class="form-control-file" required name="photo6" multiple>
         <input type="text" name="name" id="name" placeholder="Enter the Hostel's name..." required  th:field="*{name}" th:value="${fs.getName()}">
         <input type="text" name="location" id="location" placeholder="Enter the Hostel's Location..." required th:field="*{location}" th:value="${fs.getLocation()}">
         <input type="text" name="price" id="price" placeholder="Enter the Hostel's price..." required th:field="*{price}" th:value="${fs.getPrice()}">

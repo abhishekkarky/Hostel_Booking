@@ -31,12 +31,12 @@
                 <a class="room-description-main-anchor" th:href="@{~/room/booking-single-seater/}+${descriptionSingle.id}">Book Now</a>
             </div>
             <div class="room-description-main-second">
-                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.getPhoto()}" alt="">
-                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
-                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
-                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
-                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
-                <img class="rooms-image" th:src="@{/images/pica.jpg}" alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.imageBase64}"  alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.image2Base64}"  alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.image3Base64}"  alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.image4Base64}"  alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.image5Base64}"  alt="">
+                <img class="rooms-image" th:src="'data:image/png;base64,'+${descriptionSingle.image6Base64}"  alt="">
             </div>
             <br>
             <div class="room-description-main-third">

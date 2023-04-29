@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 @Service
@@ -38,14 +39,59 @@ public class SingleSeaterServiceImpl implements SingleSeaterService {
         singleSeater.setLocation(singleSeaterPojo.getLocation());
         singleSeater.setPrice(singleSeaterPojo.getPrice());
         singleSeater.setDescription(singleSeaterPojo.getDescription());
-        if(singleSeaterPojo.getPhoto()!=null){
+
+        if(!Objects.equals(singleSeaterPojo.getPhoto().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, singleSeaterPojo.getPhoto().getOriginalFilename());
             fileNames.append(singleSeaterPojo.getPhoto().getOriginalFilename());
             Files.write(fileNameAndPath, singleSeaterPojo.getPhoto().getBytes());
-
             singleSeater.setPhoto(singleSeaterPojo.getPhoto().getOriginalFilename());
+        }
+
+        if(singleSeaterPojo.getPhoto2()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, singleSeaterPojo.getPhoto2().getOriginalFilename());
+            fileNames.append(singleSeaterPojo.getPhoto2().getOriginalFilename());
+            Files.write(fileNameAndPath, singleSeaterPojo.getPhoto2().getBytes());
+            singleSeater.setPhoto2(singleSeaterPojo.getPhoto2().getOriginalFilename());
+        }
+
+        if(singleSeaterPojo.getPhoto3()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, singleSeaterPojo.getPhoto3().getOriginalFilename());
+            fileNames.append(singleSeaterPojo.getPhoto3().getOriginalFilename());
+            Files.write(fileNameAndPath, singleSeaterPojo.getPhoto3().getBytes());
+            singleSeater.setPhoto3(singleSeaterPojo.getPhoto3().getOriginalFilename());
+        }
+
+        if(singleSeaterPojo.getPhoto4()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, singleSeaterPojo.getPhoto4().getOriginalFilename());
+            fileNames.append(singleSeaterPojo.getPhoto4().getOriginalFilename());
+            Files.write(fileNameAndPath, singleSeaterPojo.getPhoto4().getBytes());
+            singleSeater.setPhoto4(singleSeaterPojo.getPhoto4().getOriginalFilename());
+        }
+
+        if(singleSeaterPojo.getPhoto5()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, singleSeaterPojo.getPhoto5().getOriginalFilename());
+            fileNames.append(singleSeaterPojo.getPhoto5().getOriginalFilename());
+            Files.write(fileNameAndPath, singleSeaterPojo.getPhoto5().getBytes());
+            singleSeater.setPhoto5(singleSeaterPojo.getPhoto5().getOriginalFilename());
+        }
+
+        if(singleSeaterPojo.getPhoto6()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, singleSeaterPojo.getPhoto6().getOriginalFilename());
+            fileNames.append(singleSeaterPojo.getPhoto6().getOriginalFilename());
+            Files.write(fileNameAndPath, singleSeaterPojo.getPhoto6().getBytes());
+            singleSeater.setPhoto6(singleSeaterPojo.getPhoto6().getOriginalFilename());
         }
 
         singleSeaterRepo.save(singleSeater);
@@ -128,5 +174,23 @@ public class SingleSeaterServiceImpl implements SingleSeaterService {
         );
         list = recentSingle.toList();
         return list;
+    }
+
+    @Override
+    public SingleSeater findById(Integer id) {
+        SingleSeater singleSeater=singleSeaterRepo.findById(id).orElseThrow(()-> new RuntimeException("not found"));
+        singleSeater=SingleSeater.builder()
+                .id(singleSeater.getId())
+                .name(singleSeater.getName())
+                .location(singleSeater.getLocation())
+                .imageBase64(getImageBase64(singleSeater.getPhoto()))
+                .image2Base64(getImageBase64(singleSeater.getPhoto2()))
+                .image3Base64(getImageBase64(singleSeater.getPhoto3()))
+                .image4Base64(getImageBase64(singleSeater.getPhoto4()))
+                .image5Base64(getImageBase64(singleSeater.getPhoto5()))
+                .image6Base64(getImageBase64(singleSeater.getPhoto6()))
+                .description(singleSeater.getDescription())
+                .build();
+        return singleSeater;
     }
 }

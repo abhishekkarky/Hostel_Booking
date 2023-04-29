@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 @Service
@@ -38,14 +39,59 @@ public class FourSeaterServiceImpl implements FourSeaterService {
         fourSeater.setLocation(fourSeaterPojo.getLocation());
         fourSeater.setPrice(fourSeaterPojo.getPrice());
         fourSeater.setDescription(fourSeaterPojo.getDescription());
-        if(fourSeaterPojo.getPhoto()!=null){
+
+        if(!Objects.equals(fourSeaterPojo.getPhoto().getOriginalFilename(), "")){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, fourSeaterPojo.getPhoto().getOriginalFilename());
             fileNames.append(fourSeaterPojo.getPhoto().getOriginalFilename());
             Files.write(fileNameAndPath, fourSeaterPojo.getPhoto().getBytes());
-
             fourSeater.setPhoto(fourSeaterPojo.getPhoto().getOriginalFilename());
+        }
+
+        if(fourSeaterPojo.getPhoto2()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, fourSeaterPojo.getPhoto2().getOriginalFilename());
+            fileNames.append(fourSeaterPojo.getPhoto2().getOriginalFilename());
+            Files.write(fileNameAndPath, fourSeaterPojo.getPhoto2().getBytes());
+            fourSeater.setPhoto2(fourSeaterPojo.getPhoto2().getOriginalFilename());
+        }
+
+        if(fourSeaterPojo.getPhoto3()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, fourSeaterPojo.getPhoto3().getOriginalFilename());
+            fileNames.append(fourSeaterPojo.getPhoto3().getOriginalFilename());
+            Files.write(fileNameAndPath, fourSeaterPojo.getPhoto3().getBytes());
+            fourSeater.setPhoto3(fourSeaterPojo.getPhoto3().getOriginalFilename());
+        }
+
+        if(fourSeaterPojo.getPhoto4()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, fourSeaterPojo.getPhoto4().getOriginalFilename());
+            fileNames.append(fourSeaterPojo.getPhoto4().getOriginalFilename());
+            Files.write(fileNameAndPath, fourSeaterPojo.getPhoto4().getBytes());
+            fourSeater.setPhoto4(fourSeaterPojo.getPhoto4().getOriginalFilename());
+        }
+
+        if(fourSeaterPojo.getPhoto5()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, fourSeaterPojo.getPhoto5().getOriginalFilename());
+            fileNames.append(fourSeaterPojo.getPhoto5().getOriginalFilename());
+            Files.write(fileNameAndPath, fourSeaterPojo.getPhoto5().getBytes());
+            fourSeater.setPhoto5(fourSeaterPojo.getPhoto5().getOriginalFilename());
+        }
+
+        if(fourSeaterPojo.getPhoto6()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, fourSeaterPojo.getPhoto6().getOriginalFilename());
+            fileNames.append(fourSeaterPojo.getPhoto6().getOriginalFilename());
+            Files.write(fileNameAndPath, fourSeaterPojo.getPhoto6().getBytes());
+            fourSeater.setPhoto6(fourSeaterPojo.getPhoto6().getOriginalFilename());
         }
 
         fourSeaterRepo.save(fourSeater);
@@ -127,5 +173,23 @@ public class FourSeaterServiceImpl implements FourSeaterService {
         );
         list = recentFour.toList();
         return list;
+    }
+
+    @Override
+    public FourSeater findById(Integer id) {
+        FourSeater fourSeater=fourSeaterRepo.findById(id).orElseThrow(()-> new RuntimeException("not found"));
+        fourSeater=FourSeater.builder()
+                .id(fourSeater.getId())
+                .name(fourSeater.getName())
+                .location(fourSeater.getLocation())
+                .imageBase64(getImageBase64(fourSeater.getPhoto()))
+                .image2Base64(getImageBase64(fourSeater.getPhoto2()))
+                .image3Base64(getImageBase64(fourSeater.getPhoto3()))
+                .image4Base64(getImageBase64(fourSeater.getPhoto4()))
+                .image5Base64(getImageBase64(fourSeater.getPhoto5()))
+                .image6Base64(getImageBase64(fourSeater.getPhoto6()))
+                .description(fourSeater.getDescription())
+                .build();
+        return fourSeater;
     }
 }

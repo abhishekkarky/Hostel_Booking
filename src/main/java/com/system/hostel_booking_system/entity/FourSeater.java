@@ -17,6 +17,11 @@ public class FourSeater {
     private Integer id;
 
     private String photo;
+    private String photo2;
+    private String photo3;
+    private String photo4;
+    private String photo5;
+    private String photo6;
 
     @Column(name = "Hostel_Name", nullable = false)
     private String name;
@@ -32,4 +37,14 @@ public class FourSeater {
 
     @Transient
     private String imageBase64;
+    @Transient
+    private String image2Base64;
+    @Transient
+    private String image3Base64;
+    @Transient
+    private String image4Base64;
+    @Transient
+    private String image5Base64;
+    @Transient
+    private String image6Base64;
 }
